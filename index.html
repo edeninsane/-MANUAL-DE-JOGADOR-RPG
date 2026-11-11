@@ -81,82 +81,33 @@ main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0
 </main>
 <footer><div class="ornament">✦</div><div>F&L — FANÁTICOS E LOUCOS</div><p>Manual do Jogador · Material de apoio à campanha</p></footer>
 <script>
-const attrs=['Corpo','Agilidade','Intelecto','Presença','Vontade'];
-const skills=['Atletismo','Furtividade','Pontaria','Luta','Reflexos','Investigação','Medicina','Ciências','Ocultismo','Tecnologia','História','Enganação','Intimidação','Persuasão','Percepção','Intuição','Concentração','Resistência','Autocontrole'];
-const a=Object.fromEntries(attrs.map(x=>[x,0])),s=Object.fromEntries(skills.map(x=>[x,0]));
-function draw(list,obj,id,totalId,meterId,statusId,maxPoints){
- const root=document.getElementById(id);root.innerHTML='';
- list.forEach(name=>{
-  const row=document.createElement('div');row.className='stat-row';
-  const label=document.createElement('span');label.className='stat-name';label.textContent=name;
-  const counter=document.createElement('div');counter.className='counter';
-  const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Remover ponto de '+name);
-  const val=document.createElement('span');val.className='value';val.textContent=obj[name];
-  const plus=document.createElement('button');plus.type='button';plus.textContent='+ ';plus.setAttribute('aria-label','Adicionar ponto em '+name);
-  minus.disabled=obj[name]===0;plus.disabled=obj[name]>=10||sum(obj)>=maxPoints;
-  minus.addEventListener('click',()=>{obj[name]--;render()});
-  plus.addEventListener('click',()=>{if(obj[name]<10&&sum(obj)<maxPoints)obj[name]++;render()});
-  counter.append(minus,val,plus);row.append(label,counter);root.append(row);
- });
- const n=sum(obj);document.getElementById(totalId).textContent=n+' / '+maxPoints;
- document.getElementById(meterId).style.width=(n/maxPoints*100)+'%';
- const status=document.getElementById(statusId);
- status.textContent=n===maxPoints?'Distribuição completa.':(maxPoints-n)+' ponto(s) restante(s).';
- status.className='status';
-}
-function sum(o){return Object.values(o).reduce((x,y)=>x+y,0)}
-function render(){draw(attrs,a,'attributes','attr-total','attr-meter','attr-status',5);draw(skills,s,'skills','skill-total','skill-meter','skill-status',15)}
-render();
-document.getElementById('reset-points').onclick=()=>{Object.keys(a).forEach(k=>a[k]=0);Object.keys(s).forEach(k=>s[k]=0);render()};
-document.getElementById('copy-points').onclick=()=>{const t='F&L — DISTRIBUIÇÃO INICIAL\n\nATRIBUTOS\n'+attrs.map(k=>k+': '+a[k]).join('\n')+'\nTotal: '+sum(a)+'/5\n\nPERÍCIAS\n'+skills.map(k=>k+': '+s[k]).join('\n')+'\nTotal: '+sum(s)+'/15';copyText(t)};
-function copyText(t){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(()=>alert('Texto copiado!')).catch(()=>fallback(t))}else fallback(t)}
-function fallback(t){const x=document.createElement('textarea');x.value=t;document.body.append(x);x.select();document.execCommand('copy');x.remove();alert('Texto copiado!')}
-document.getElementById('generate').onclick=()=>{
- const f=document.getElementById('origin-form');const lines=['F&L — FICHA DE ORIGEM NARRATIVA',''];
- for(const el of f.elements){if(!el.name||el.type==='button'||el.type==='reset')continue;const v=el.value.trim();if(v)lines.push(el.name+':\n'+v+'\n')}
- lines.push('DISTRIBUIÇÃO DE ATRIBUTOS');attrs.forEach(k=>lines.push(k+': '+a[k]));lines.push('Total: '+sum(a)+'/5','');
- lines.push('DISTRIBUIÇÃO DE PERÍCIAS');skills.forEach(k=>lines.push(k+': '+s[k]));lines.push('Total: '+sum(s)+'/15');
- document.getElementById('output').value=lines.join('\n');document.getElementById('result-panel').hidden=false;document.getElementById('result-panel').scrollIntoView({behavior:'smooth'});
-};
-document.getElementById('copy-origin').onclick=()=>copyText(document.getElementById('output').value);
-function collectSheet(){
- const form=document.getElementById('origin-form');
- const fields={};
- for(const el of form.elements){if(el.name&&el.type!=='button'&&el.type!=='reset')fields[el.name]=el.value}
- return {version:1,fields,attributes:{...a},skills:{...s}};
-}
-function loadSheet(data){
- if(!data||data.version!==1||!data.fields||!data.attributes||!data.skills)throw new Error('Código de backup inválido ou incompatível.');
- const form=document.getElementById('origin-form');
- for(const el of form.elements){if(el.name&&Object.prototype.hasOwnProperty.call(data.fields,el.name))el.value=data.fields[el.name]}
- for(const k of attrs)a[k]=Math.max(0,Math.min(10,Number(data.attributes[k])||0));
- for(const k of skills)s[k]=Math.max(0,Math.min(10,Number(data.skills[k])||0));
- if(sum(a)>5||sum(s)>15)throw new Error('A distribuição do código ultrapassa os pontos iniciais permitidos.');
- render();
- document.getElementById('backup-status').textContent='Ficha carregada. Confira os dados antes de continuar.';
-}
-document.getElementById('export-data').onclick=()=>{
- const code=JSON.stringify(collectSheet());
- document.getElementById('backup-data').value=code;
- document.getElementById('backup-status').textContent='Código de backup gerado. Copie e guarde para recuperar sua ficha depois.';
-};
-document.getElementById('copy-backup').onclick=()=>{
- const box=document.getElementById('backup-data');
- if(!box.value.trim())document.getElementById('export-data').click();
- copyText(box.value);
-};
-document.getElementById('import-backup').onclick=()=>{
- try{loadSheet(JSON.parse(document.getElementById('backup-data').value.trim()))}
- catch(e){document.getElementById('backup-status').textContent=e.message||'Não foi possível carregar o código.'}
-};
-document.getElementById('save-pdf').onclick=()=>{
- document.getElementById('generate').click();
- setTimeout(()=>window.print(),250);
-};
-
 function d20(){return Math.floor(Math.random()*20)+1}
-document.getElementById('roll-test').onclick=()=>{const die=d20(),av=Number(document.getElementById('roll-attr-value').value)||0,sv=Number(document.getElementById('roll-skill-value').value)||0,dt=Number(document.getElementById('roll-dt').value)||0,total=die+av+sv;document.getElementById('roll-result').textContent='1d20 ('+die+') + atributo ('+av+') + perícia ('+sv+') = '+total+' · DT '+dt+' · '+(die===20?'SUCESSO EXCEPCIONAL':die===1?'COMPLICAÇÃO CRÍTICA':total>=dt?'SUCESSO':'FALHA')};
-document.getElementById('roll-trm').onclick=()=>{const die=d20(),det=Number(document.getElementById('trm-det').value)||0,med=Math.max(0,Math.min(10,Number(document.getElementById('trm-med').value)||0)),dt=Number(document.getElementById('trm-dt').value)||0,pen=med<=2?0:med<=4?1:med<=6?2:med<=8?3:4,total=die+det-pen;let result='1d20 ('+die+') + DET ('+det+') − MED ('+pen+') = '+total+' · DT '+dt+' · ';if(med===10)result+='MED 10 — COLAPSO: aplique a consequência narrativa.';else if(die===20)result+='SUCESSO EXCEPCIONAL — MED não aumenta.';else if(die===1)result+='COMPLICAÇÃO CRÍTICA — MED +2 ('+Math.min(10,med+2)+').';else if(total>=dt)result+='SUCESSO — sem aumento de MED.';else result+='FALHA — MED +1 ('+Math.min(10,med+1)+').';document.getElementById('trm-result').textContent=result};
+document.getElementById('roll-test').addEventListener('click',()=>{
+ const die=d20();
+ const attribute=Number(document.getElementById('roll-attr-value').value)||0;
+ const skill=Number(document.getElementById('roll-skill-value').value)||0;
+ const dt=Number(document.getElementById('roll-dt').value)||0;
+ const total=die+attribute+skill;
+ let outcome=total>=dt?'SUCESSO':'FALHA';
+ if(die===20)outcome='SUCESSO EXCEPCIONAL';
+ if(die===1)outcome='COMPLICAÇÃO CRÍTICA';
+ document.getElementById('roll-result').textContent='1d20 ('+die+') + atributo ('+attribute+') + perícia ('+skill+') = '+total+' · DT '+dt+' · '+outcome;
+});
+document.getElementById('roll-trm').addEventListener('click',()=>{
+ const die=d20();
+ const det=Number(document.getElementById('trm-det').value)||0;
+ const med=Math.max(0,Math.min(10,Number(document.getElementById('trm-med').value)||0));
+ const dt=Number(document.getElementById('trm-dt').value)||0;
+ const penalty=med<=2?0:med<=4?1:med<=6?2:med<=8?3:4;
+ const total=die+det-penalty;
+ let result='1d20 ('+die+') + DET ('+det+') − penalidade do MED ('+penalty+') = '+total+' · DT '+dt+' · ';
+ if(med===10)result+='MED 10 — COLAPSO; o mestre aplica a consequência narrativa.';
+ else if(die===20)result+='SUCESSO EXCEPCIONAL — MED não aumenta e há pequena vantagem narrativa.';
+ else if(die===1)result+='COMPLICAÇÃO CRÍTICA — MED +2 ('+Math.min(10,med+2)+').';
+ else if(total>=dt)result+='SUCESSO — MED não aumenta.';
+ else result+='FALHA — MED +1 ('+Math.min(10,med+1)+').';
+ document.getElementById('trm-result').textContent=result;
+});
 </script>
 </body>
 </html>
