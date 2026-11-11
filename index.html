@@ -14,7 +14,7 @@ header{min-height:420px;padding:76px 22px 60px;text-align:center;display:flex;fl
 nav{position:sticky;top:0;z-index:5;background:#100e0ef2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px}nav a{font-size:.76rem;letter-spacing:.08em;text-decoration:none;color:var(--muted);padding:7px 11px;border:1px solid transparent}nav a:hover{color:var(--ink);border-color:var(--line)}
 main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0;border-bottom:1px solid var(--line);scroll-margin-top:80px}.section-kicker{color:var(--gold);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}h2{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:500;margin:4px 0 18px}h3{font-size:1.55rem;font-weight:600;margin:22px 0 8px;color:#d7c5a7}p{color:#d0c5b5}.lead{font-family:'IM Fell English',serif;font-size:1.25rem;color:#d8c9b3}.note{border-left:2px solid var(--gold);padding:12px 18px;background:#b69a680c;color:var(--muted);margin:22px 0}.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.chapter{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:19px 20px}.chapter small{color:var(--gold);letter-spacing:.16em}.chapter h3{margin:5px 0}.chapter p{font-size:.92rem;margin-bottom:0;color:var(--muted)}
 .panel{background:linear-gradient(145deg,#211b19,#171313);border:1px solid var(--line);padding:22px;margin:20px 0}.panel h3{margin-top:0}.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.stat-list{display:grid;gap:10px}.stat-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;border-bottom:1px solid #493a3066;padding:8px 0}.stat-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem}.counter{display:flex;align-items:center;gap:9px}.counter button{width:32px;height:32px;border:1px solid var(--line);background:#2a211d;color:var(--ink);cursor:pointer;font-size:1.1rem}.counter button:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}.counter button:disabled{opacity:.25;cursor:not-allowed}.value{min-width:20px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}.meter{height:7px;background:#342a25;margin:14px 0 7px;overflow:hidden}.meter span{display:block;height:100%;background:var(--gold);width:0;transition:width .2s}.total{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem}.total strong{color:var(--ink)}.status{font-size:.83rem;color:var(--green);min-height:1.4em}.status.warn{color:#d59b79}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button.primary,.secondary{border:1px solid var(--gold);background:#8b7047;color:#fff3df;padding:11px 17px;cursor:pointer;letter-spacing:.04em}button.secondary{background:transparent;color:var(--gold)}button.primary:hover{background:#a18455}.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:.8rem;color:var(--gold);letter-spacing:.06em}.field input,.field textarea,.field select{width:100%;background:#100e0e;border:1px solid var(--line);color:var(--ink);padding:11px;outline:none}.field input:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{min-height:90px;resize:vertical}.field.full{grid-column:1/-1}.form-block{margin:24px 0}.form-block h3{border-bottom:1px solid var(--line);padding-bottom:8px}footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);color:var(--muted);font-family:'IM Fell English',serif}#output{min-height:150px} .small{font-size:.82rem;color:var(--muted)}
-@media(max-width:600px){nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap}nav a{white-space:nowrap}.panel{padding:16px}.stat-row{gap:7px}}
+@media print{body{background:#fff!important;color:#111!important}header,nav,footer,.section:not(#ficha),#ficha .form-block,#ficha form,.panel .actions,.small{display:none!important}main{padding:0;max-width:none}.section#ficha{border:0;padding:0}.section#ficha> .section-kicker{color:#555}#ficha h2,#ficha h3,#ficha p{color:#111!important}.panel{background:#fff!important;border:1px solid #777;color:#111;break-inside:avoid}#result-panel{display:block!important}#output{min-height:0;height:auto;border:0;background:#fff;color:#111;white-space:pre-wrap}textarea{color:#111!important} }\n@media(max-width:600px){nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap}nav a{white-space:nowrap}.panel{padding:16px}.stat-row{gap:7px}}
 </style>
 </head>
 <body>
@@ -114,6 +114,12 @@ main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0
 <div class="field"><label for="motivo">Por que aceitou?</label><textarea id="motivo" name="Por que aceitou"></textarea></div>
 <div class="field full"><label for="rotina">O que fazia antes da primeira missão?</label><textarea id="rotina" name="Rotina antes da primeira missão"></textarea></div>
 </div></div>
+<div class="form-block"><h3>Recursos do personagem</h3><p class="small">Preencha manualmente os valores definidos para seu personagem. Você poderá alterá-los durante a campanha, conforme as regras do mestre.</p><div class="field-grid">
+<div class="field"><label for="pv">PV — Pontos de Vida</label><input id="pv" name="PV — Pontos de Vida" type="number" min="0" step="1" placeholder="Ex.: 25"></div>
+<div class="field"><label for="pe">PE — Pontos de Esforço</label><input id="pe" name="PE — Pontos de Esforço" type="number" min="0" step="1" placeholder="Ex.: 10"></div>
+<div class="field"><label for="san">SAN — Sanidade</label><input id="san" name="SAN — Sanidade" type="number" min="0" step="1" placeholder="Ex.: 30"></div>
+<div class="field"><label for="med">MED — Medidor de Exposição ao Desconhecido</label><input id="med" name="MED — Medidor de Exposição ao Desconhecido" type="number" min="0" step="1" placeholder="Ex.: 0"></div>
+</div></div>
 <div class="form-block"><h3>Informações de personagem</h3><div class="field-grid">
 <div class="field"><label for="classe">Classe ou função</label><input id="classe" name="Classe ou função"></div>
 <div class="field"><label for="papel">Papel no grupo</label><input id="papel" name="Papel no grupo"></div>
@@ -121,7 +127,8 @@ main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0
 <div class="field"><label for="ocupacao">Origem ou ocupação</label><input id="ocupacao" name="Origem ou ocupação"></div>
 <div class="field full"><label for="notas">Anotações adicionais para o mestre (opcional)</label><textarea id="notas" name="Anotações adicionais"></textarea></div>
 </div></div>
-<div class="actions"><button type="button" class="primary" id="generate">Gerar ficha em texto</button><button type="reset" class="secondary">Limpar formulário</button></div>
+<div class="actions"><button type="button" class="primary" id="generate">Gerar ficha em texto</button><button type="button" class="secondary" id="save-pdf">Imprimir / salvar ficha em PDF</button><button type="button" class="secondary" id="export-data">Gerar código de backup</button><button type="reset" class="secondary">Limpar formulário</button></div>
+<div class="panel"><h3>Guardar ou recuperar sua ficha</h3><p>O código de backup guarda os campos preenchidos, atributos, perícias e recursos. Copie-o e mantenha-o em um lugar seguro. Se a página reiniciar ou você abrir o site em outro dispositivo, cole o código abaixo e carregue sua ficha.</p><div class="field"><label for="backup-data">Código de backup da ficha</label><textarea id="backup-data" placeholder="O código de backup aparecerá aqui. Para recuperar, cole o código neste campo."></textarea></div><div class="actions"><button type="button" class="primary" id="copy-backup">Copiar código</button><button type="button" class="secondary" id="import-backup">Carregar ficha pelo código</button></div><p class="small" id="backup-status" aria-live="polite"></p></div>
 </form>
 <div class="panel" id="result-panel" hidden><h3>Ficha narrativa gerada</h3><textarea id="output" readonly></textarea><div class="actions"><button class="primary" id="copy-origin">Copiar ficha</button></div></div>
 </section>
@@ -166,6 +173,40 @@ document.getElementById('generate').onclick=()=>{
  document.getElementById('output').value=lines.join('\n');document.getElementById('result-panel').hidden=false;document.getElementById('result-panel').scrollIntoView({behavior:'smooth'});
 };
 document.getElementById('copy-origin').onclick=()=>copyText(document.getElementById('output').value);
+function collectSheet(){
+ const form=document.getElementById('origin-form');
+ const fields={};
+ for(const el of form.elements){if(el.name&&el.type!=='button'&&el.type!=='reset')fields[el.name]=el.value}
+ return {version:1,fields,attributes:{...a},skills:{...s}};
+}
+function loadSheet(data){
+ if(!data||data.version!==1||!data.fields||!data.attributes||!data.skills)throw new Error('Código de backup inválido ou incompatível.');
+ const form=document.getElementById('origin-form');
+ for(const el of form.elements){if(el.name&&Object.prototype.hasOwnProperty.call(data.fields,el.name))el.value=data.fields[el.name]}
+ for(const k of attrs)a[k]=Math.max(0,Math.min(10,Number(data.attributes[k])||0));
+ for(const k of skills)s[k]=Math.max(0,Math.min(10,Number(data.skills[k])||0));
+ if(sum(a)>5||sum(s)>15)throw new Error('A distribuição do código ultrapassa os pontos iniciais permitidos.');
+ render();
+ document.getElementById('backup-status').textContent='Ficha carregada. Confira os dados antes de continuar.';
+}
+document.getElementById('export-data').onclick=()=>{
+ const code=JSON.stringify(collectSheet());
+ document.getElementById('backup-data').value=code;
+ document.getElementById('backup-status').textContent='Código de backup gerado. Copie e guarde para recuperar sua ficha depois.';
+};
+document.getElementById('copy-backup').onclick=()=>{
+ const box=document.getElementById('backup-data');
+ if(!box.value.trim())document.getElementById('export-data').click();
+ copyText(box.value);
+};
+document.getElementById('import-backup').onclick=()=>{
+ try{loadSheet(JSON.parse(document.getElementById('backup-data').value.trim()))}
+ catch(e){document.getElementById('backup-status').textContent=e.message||'Não foi possível carregar o código.'}
+};
+document.getElementById('save-pdf').onclick=()=>{
+ document.getElementById('generate').click();
+ setTimeout(()=>window.print(),250);
+};
 </script>
 </body>
 </html>
