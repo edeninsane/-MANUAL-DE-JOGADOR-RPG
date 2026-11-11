@@ -26,7 +26,7 @@ main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0
 <div class="ornament">✦ ───── ✦</div>
 </header>
 <nav>
-<a href="#inicio">INÍCIO</a><a href="#origem">SUA ORIGEM</a><a href="#vida">VIDA ANTERIOR</a><a href="#paranormal">O DESCONHECIDO</a><a href="#organizacao">A ORGANIZAÇÃO</a><a href="#rotina">PRIMEIRA MISSÃO</a><a href="#criacao">CRIAÇÃO</a><a href="#ficha">FICHA NARRATIVA</a>
+<a href="#inicio">INÍCIO</a><a href="#origem">SUA ORIGEM</a><a href="#vida">VIDA ANTERIOR</a><a href="#paranormal">O DESCONHECIDO</a><a href="#organizacao">A ORGANIZAÇÃO</a><a href="#rotina">PRIMEIRA MISSÃO</a><a href="#rolagens">SISTEMA DE ROLAGEM</a><a href="ficha.html">FICHA DO PERSONAGEM ↗</a>
 </nav>
 <main>
 <section class="section" id="inicio">
@@ -71,66 +71,12 @@ main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0
 <p>Imagine o que seu personagem estava fazendo pouco antes de ser chamado. Estava trabalhando? Conversava com alguém? Estudava um documento? Organizava seus pertences? Tinha acabado de chegar à organização ou já conhecia o lugar?</p>
 <p>Esses pequenos detalhes ajudam a dar vida ao personagem e tornam o início da campanha mais pessoal.</p>
 </section>
-<section class="section" id="criacao">
-<div class="section-kicker">VII · Regras de criação</div><h2>Distribuição de atributos e perícias</h2>
-<p class="lead">Todo personagem começa do zero. É você quem decide onde estão seus talentos.</p>
-<div class="columns">
-<div class="panel">
-<h3>Atributos</h3><p>Você tem <strong>5 pontos</strong> para distribuir entre os cinco atributos. Todos começam em 0.</p><div class="total"><span>Pontos distribuídos</span><strong id="attr-total">0 / 5</strong></div><div class="meter"><span id="attr-meter"></span></div><div class="stat-list" id="attributes"></div><div class="status" id="attr-status" aria-live="polite"></div>
-</div>
-<div class="panel">
-<h3>Perícias</h3><p>Você tem <strong>15 pontos</strong> para distribuir entre as dezenove perícias. Todas começam em 0.</p><div class="total"><span>Pontos distribuídos</span><strong id="skill-total">0 / 15</strong></div><div class="meter"><span id="skill-meter"></span></div><div class="stat-list" id="skills"></div><div class="status" id="skill-status" aria-live="polite"></div>
-</div>
-</div>
-<div class="note"><strong>Limite inicial:</strong> nenhum atributo ou perícia pode ultrapassar 10 pontos. Os pontos de atributos e perícias são separados: não é permitido transferir pontos de um grupo para o outro.</div>
-<div class="actions"><button class="primary" id="reset-points">Reiniciar distribuição</button><button class="secondary" id="copy-points">Copiar distribuição</button></div>
-<p class="small">A distribuição é feita nesta página. Ela não é enviada automaticamente ao mestre nem salva em uma conta.</p>
-</section>
-<section class="section" id="ficha">
-<div class="section-kicker">VIII · Construção narrativa</div><h2>Ficha de origem narrativa</h2>
-<p>Preencha os campos que já souber. Você pode deixar espaços em branco e voltar a esta ficha quando tiver novas ideias.</p>
-<form id="origin-form">
-<div class="form-block"><h3>Identidade e origem</h3><div class="field-grid">
-<div class="field"><label for="nome">Nome completo</label><input id="nome" name="Nome completo"></div>
-<div class="field"><label for="nascimento">Data de nascimento</label><input id="nascimento" name="Data de nascimento" placeholder="DD/MM/AAAA"></div>
-<div class="field"><label for="local-nasc">Local de nascimento</label><input id="local-nasc" name="Local de nascimento"></div>
-<div class="field"><label for="criacao">Onde foi criado?</label><input id="criacao" name="Onde foi criado"></div>
-<div class="field full"><label for="familia">Família e pessoas importantes</label><textarea id="familia" name="Família e pessoas importantes"></textarea></div>
-</div></div>
-<div class="form-block"><h3>Vida pessoal</h3><div class="field-grid">
-<div class="field full"><label for="infancia">Infância e adolescência</label><textarea id="infancia" name="Infância e adolescência"></textarea></div>
-<div class="field"><label for="estudos">Estudos ou formação</label><input id="estudos" name="Estudos ou formação"></div>
-<div class="field"><label for="profissao">Trabalho ou profissão</label><input id="profissao" name="Trabalho ou profissão"></div>
-<div class="field full"><label for="objetivos">Objetivos e planos</label><textarea id="objetivos" name="Objetivos e planos"></textarea></div>
-<div class="field full"><label for="personalidade">Personalidade, hábitos e medos</label><textarea id="personalidade" name="Personalidade, hábitos e medos"></textarea></div>
-</div></div>
-<div class="form-block"><h3>Contato com o desconhecido</h3><div class="field-grid">
-<div class="field full"><label for="contato">Já teve contato com algo inexplicável?</label><textarea id="contato" name="Contato inexplicável" placeholder="Pode escrever 'não' ou deixar em branco."></textarea></div>
-<div class="field"><label for="crencas">Crenças ou opiniões</label><textarea id="crencas" name="Crenças ou opiniões"></textarea></div>
-<div class="field"><label for="reacao">Como reagiria ao paranormal?</label><textarea id="reacao" name="Reação ao paranormal"></textarea></div>
-</div></div>
-<div class="form-block"><h3>Entrada na organização</h3><div class="field-grid">
-<div class="field"><label for="recrutamento">Como chegou à F&L?</label><select id="recrutamento" name="Como chegou à F&L"><option value="">Selecione, se já souber</option><option>Indicação</option><option>Recrutamento</option><option>Investigação própria</option><option>Contato profissional</option><option>Convocação inesperada</option><option>A definir com o mestre</option></select></div>
-<div class="field"><label for="motivo">Por que aceitou?</label><textarea id="motivo" name="Por que aceitou"></textarea></div>
-<div class="field full"><label for="rotina">O que fazia antes da primeira missão?</label><textarea id="rotina" name="Rotina antes da primeira missão"></textarea></div>
-</div></div>
-<div class="form-block"><h3>Recursos do personagem</h3><p class="small">Preencha manualmente os valores definidos para seu personagem. Você poderá alterá-los durante a campanha, conforme as regras do mestre.</p><div class="field-grid">
-<div class="field"><label for="pv">PV — Pontos de Vida</label><input id="pv" name="PV — Pontos de Vida" type="number" min="0" step="1" placeholder="Ex.: 25"></div>
-<div class="field"><label for="pe">PE — Pontos de Esforço</label><input id="pe" name="PE — Pontos de Esforço" type="number" min="0" step="1" placeholder="Ex.: 10"></div>
-<div class="field"><label for="san">SAN — Sanidade</label><input id="san" name="SAN — Sanidade" type="number" min="0" step="1" placeholder="Ex.: 30"></div>
-<div class="field"><label for="med">MED — Medidor de Exposição ao Desconhecido</label><input id="med" name="MED — Medidor de Exposição ao Desconhecido" type="number" min="0" step="1" placeholder="Ex.: 0"></div>
-</div></div>
-<div class="form-block"><h3>Informações de personagem</h3><div class="field-grid">
-<div class="field"><label for="classe">Classe ou função</label><input id="classe" name="Classe ou função"></div>
-<div class="field"><label for="papel">Papel no grupo</label><input id="papel" name="Papel no grupo"></div>
-<div class="field"><label for="elemento">Elemento</label><input id="elemento" name="Elemento"></div>
-<div class="field"><label for="ocupacao">Origem ou ocupação</label><input id="ocupacao" name="Origem ou ocupação"></div>
-<div class="field full"><label for="notas">Anotações adicionais para o mestre (opcional)</label><textarea id="notas" name="Anotações adicionais"></textarea></div>
-</div></div>
-<div class="actions"><button type="button" class="primary" id="generate">Gerar ficha em texto</button><button type="button" class="secondary" id="save-pdf">Imprimir / salvar ficha em PDF</button><button type="button" class="secondary" id="export-data">Gerar código de backup</button><button type="reset" class="secondary">Limpar formulário</button></div>
-<div class="panel"><h3>Guardar ou recuperar sua ficha</h3><p>O código de backup guarda os campos preenchidos, atributos, perícias e recursos. Copie-o e mantenha-o em um lugar seguro. Se a página reiniciar ou você abrir o site em outro dispositivo, cole o código abaixo e carregue sua ficha.</p><div class="field"><label for="backup-data">Código de backup da ficha</label><textarea id="backup-data" placeholder="O código de backup aparecerá aqui. Para recuperar, cole o código neste campo."></textarea></div><div class="actions"><button type="button" class="primary" id="copy-backup">Copiar código</button><button type="button" class="secondary" id="import-backup">Carregar ficha pelo código</button></div><p class="small" id="backup-status" aria-live="polite"></p></div>
-</form>
-<div class="panel" id="result-panel" hidden><h3>Ficha narrativa gerada</h3><textarea id="output" readonly></textarea><div class="actions"><button class="primary" id="copy-origin">Copiar ficha</button></div></div>
+<section class="section" id="rolagens">
+<div class="section-kicker">VII · Sistema de testes</div><h2>Rolagens e dificuldades</h2>
+<p class="lead">O acaso determina o resultado; os atributos e as perícias representam aquilo que o personagem sabe fazer.</p>
+<div class="panel"><h3>Testes comuns</h3><p>Role <strong>1d20 + atributo + perícia</strong> e compare o total com a Dificuldade-Alvo (DT). Se o resultado for igual ou maior que a DT, o teste é um sucesso.</p><div class="field-grid"><div class="field"><label for="roll-attribute">Atributo</label><select id="roll-attribute"><option value="0">Sem atributo (+0)</option><option>Corpo</option><option>Agilidade</option><option>Intelecto</option><option>Presença</option><option>Vontade</option></select></div><div class="field"><label for="roll-attr-value">Valor do atributo</label><input id="roll-attr-value" type="number" value="0"></div><div class="field"><label for="roll-skill">Perícia</label><select id="roll-skill"><option value="0">Sem perícia (+0)</option><option>Atletismo</option><option>Furtividade</option><option>Pontaria</option><option>Luta</option><option>Reflexos</option><option>Investigação</option><option>Medicina</option><option>Ciências</option><option>Ocultismo</option><option>Tecnologia</option><option>História</option><option>Enganação</option><option>Intimidação</option><option>Persuasão</option><option>Percepção</option><option>Intuição</option><option>Concentração</option><option>Resistência</option><option>Autocontrole</option></select></div><div class="field"><label for="roll-skill-value">Valor da perícia</label><input id="roll-skill-value" type="number" value="0"></div><div class="field"><label for="roll-dt">Dificuldade (DT)</label><input id="roll-dt" type="number" value="13"></div></div><div class="actions"><button class="primary" id="roll-test">Rolar teste</button></div><p id="roll-result" aria-live="polite" class="lead">Aguardando rolagem…</p></div>
+<div class="panel"><h3>Teste de Resistência Mental (TRM)</h3><p>Quando o personagem enfrenta horror, pressão psicológica ou uma manifestação realmente perturbadora, o mestre pode pedir um TRM. Role <strong>1d20 + DET − penalidade do MED</strong> e compare com a DT indicada pelo mestre. Não é necessário fazer TRM em situações comuns ou sem risco psicológico relevante.</p><div class="field-grid"><div class="field"><label for="trm-det">DET — Determinação</label><input id="trm-det" type="number" value="0"></div><div class="field"><label for="trm-med">MED atual (0–10)</label><input id="trm-med" type="number" min="0" max="10" value="0"></div><div class="field"><label for="trm-dt">Dificuldade (DT)</label><input id="trm-dt" type="number" value="13"></div></div><div class="note"><strong>Penalidade por MED:</strong> 0–2: +0; 3–4: −1; 5–6: −2; 7–8: −3; 9: −4; 10: colapso e consequência narrativa definida pelo mestre.</div><div class="actions"><button class="primary" id="roll-trm">Rolar TRM</button></div><p id="trm-result" class="lead" aria-live="polite">Aguardando rolagem…</p><p class="small">Em falha, o MED aumenta em 1. Um 1 natural provoca uma complicação crítica e aumenta o MED em 2. Um 20 natural é um sucesso excepcional, não aumenta o MED e concede uma pequena vantagem narrativa. O mestre aplica as consequências e evita penalizar duas vezes pelo mesmo efeito.</p></div>
+<div class="note">A escala de MED vai de 0 a 10: 0–2 Estável; 3–4 Inquieto; 5–6 Abalado; 7–8 Aterrorizado; 9 Crítico; 10 Colapso. A exposição pode aumentar diante de entidades, manifestações, verdades perturbadoras, trauma, rituais e acontecimentos incompreensíveis.</div>
 </section>
 </main>
 <footer><div class="ornament">✦</div><div>F&L — FANÁTICOS E LOUCOS</div><p>Manual do Jogador · Material de apoio à campanha</p></footer>
@@ -207,6 +153,10 @@ document.getElementById('save-pdf').onclick=()=>{
  document.getElementById('generate').click();
  setTimeout(()=>window.print(),250);
 };
+
+function d20(){return Math.floor(Math.random()*20)+1}
+document.getElementById('roll-test').onclick=()=>{const die=d20(),av=Number(document.getElementById('roll-attr-value').value)||0,sv=Number(document.getElementById('roll-skill-value').value)||0,dt=Number(document.getElementById('roll-dt').value)||0,total=die+av+sv;document.getElementById('roll-result').textContent='1d20 ('+die+') + atributo ('+av+') + perícia ('+sv+') = '+total+' · DT '+dt+' · '+(die===20?'SUCESSO EXCEPCIONAL':die===1?'COMPLICAÇÃO CRÍTICA':total>=dt?'SUCESSO':'FALHA')};
+document.getElementById('roll-trm').onclick=()=>{const die=d20(),det=Number(document.getElementById('trm-det').value)||0,med=Math.max(0,Math.min(10,Number(document.getElementById('trm-med').value)||0)),dt=Number(document.getElementById('trm-dt').value)||0,pen=med<=2?0:med<=4?1:med<=6?2:med<=8?3:4,total=die+det-pen;let result='1d20 ('+die+') + DET ('+det+') − MED ('+pen+') = '+total+' · DT '+dt+' · ';if(med===10)result+='MED 10 — COLAPSO: aplique a consequência narrativa.';else if(die===20)result+='SUCESSO EXCEPCIONAL — MED não aumenta.';else if(die===1)result+='COMPLICAÇÃO CRÍTICA — MED +2 ('+Math.min(10,med+2)+').';else if(total>=dt)result+='SUCESSO — sem aumento de MED.';else result+='FALHA — MED +1 ('+Math.min(10,med+1)+').';document.getElementById('trm-result').textContent=result};
 </script>
 </body>
 </html>
