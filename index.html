@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100e0e">
+<title>F&L — Manual do Jogador</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap');
+:root{--bg:#100e0e;--panel:#191515;--panel2:#211b19;--ink:#e6dccb;--muted:#a99a86;--gold:#b69a68;--red:#773d3d;--line:#493a30;--green:#8eaa86}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#33251f 0%,var(--bg) 55%);color:var(--ink);font-family:Manrope, sans-serif;line-height:1.7}a{color:var(--gold)}button,input,textarea,select{font:inherit}
+header{min-height:420px;padding:76px 22px 60px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;border-bottom:1px solid var(--line);background:linear-gradient(#100e0eb8,#100e0ee8),repeating-linear-gradient(0deg,transparent 0 3px,#ffffff05 4px 5px)}
+.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:.72rem}h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}h1{font-size:clamp(3.4rem,9vw,6.8rem);line-height:.9;margin:22px 0 16px;font-weight:500;letter-spacing:.06em}header p{max-width:620px;color:var(--muted);font-family:'IM Fell English',serif;font-size:1.2rem;font-style:italic}.ornament{color:var(--gold);font-size:1.2rem;letter-spacing:.7em;margin:10px 0}
+nav{position:sticky;top:0;z-index:5;background:#100e0ef2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px}nav a{font-size:.76rem;letter-spacing:.08em;text-decoration:none;color:var(--muted);padding:7px 11px;border:1px solid transparent}nav a:hover{color:var(--ink);border-color:var(--line)}
+main{max-width:1100px;margin:auto;padding:40px 22px 90px}.section{padding:35px 0;border-bottom:1px solid var(--line);scroll-margin-top:80px}.section-kicker{color:var(--gold);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}h2{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:500;margin:4px 0 18px}h3{font-size:1.55rem;font-weight:600;margin:22px 0 8px;color:#d7c5a7}p{color:#d0c5b5}.lead{font-family:'IM Fell English',serif;font-size:1.25rem;color:#d8c9b3}.note{border-left:2px solid var(--gold);padding:12px 18px;background:#b69a680c;color:var(--muted);margin:22px 0}.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.chapter{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:19px 20px}.chapter small{color:var(--gold);letter-spacing:.16em}.chapter h3{margin:5px 0}.chapter p{font-size:.92rem;margin-bottom:0;color:var(--muted)}
+.panel{background:linear-gradient(145deg,#211b19,#171313);border:1px solid var(--line);padding:22px;margin:20px 0}.panel h3{margin-top:0}.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.stat-list{display:grid;gap:10px}.stat-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;border-bottom:1px solid #493a3066;padding:8px 0}.stat-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem}.counter{display:flex;align-items:center;gap:9px}.counter button{width:32px;height:32px;border:1px solid var(--line);background:#2a211d;color:var(--ink);cursor:pointer;font-size:1.1rem}.counter button:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}.counter button:disabled{opacity:.25;cursor:not-allowed}.value{min-width:20px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}.meter{height:7px;background:#342a25;margin:14px 0 7px;overflow:hidden}.meter span{display:block;height:100%;background:var(--gold);width:0;transition:width .2s}.total{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem}.total strong{color:var(--ink)}.status{font-size:.83rem;color:var(--green);min-height:1.4em}.status.warn{color:#d59b79}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button.primary,.secondary{border:1px solid var(--gold);background:#8b7047;color:#fff3df;padding:11px 17px;cursor:pointer;letter-spacing:.04em}button.secondary{background:transparent;color:var(--gold)}button.primary:hover{background:#a18455}.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:.8rem;color:var(--gold);letter-spacing:.06em}.field input,.field textarea,.field select{width:100%;background:#100e0e;border:1px solid var(--line);color:var(--ink);padding:11px;outline:none}.field input:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{min-height:90px;resize:vertical}.field.full{grid-column:1/-1}.form-block{margin:24px 0}.form-block h3{border-bottom:1px solid var(--line);padding-bottom:8px}footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);color:var(--muted);font-family:'IM Fell English',serif}#output{min-height:150px} .small{font-size:.82rem;color:var(--muted)}
+@media(max-width:600px){nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap}nav a{white-space:nowrap}.panel{padding:16px}.stat-row{gap:7px}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Fanáticos e Loucos · Arquivo do jogador</div>
+<div class="ornament">✦ ───── ✦</div>
+<h1>MANUAL DO<br>JOGADOR</h1>
+<p>“Toda trajetória começa muito antes de alguém atender à convocação.”</p>
+<div class="ornament">✦ ───── ✦</div>
+</header>
+<nav>
+<a href="#inicio">INÍCIO</a><a href="#origem">SUA ORIGEM</a><a href="#vida">VIDA ANTERIOR</a><a href="#paranormal">O DESCONHECIDO</a><a href="#organizacao">A ORGANIZAÇÃO</a><a href="#rotina">PRIMEIRA MISSÃO</a><a href="#criacao">CRIAÇÃO</a><a href="#ficha">FICHA NARRATIVA</a>
+</nav>
+<main>
+<section class="section" id="inicio">
+<div class="section-kicker">I · Antes da convocação</div><h2>Antes de tudo</h2>
+<p class="lead">Antes de serem investigadores, vocês eram pessoas. E cada pessoa chega até aqui por um caminho diferente.</p>
+<p>Este manual foi criado para ajudar você a construir a trajetória do seu personagem antes do início da campanha. Pense em quem ele era, onde viveu, quais pessoas fizeram parte de sua vida e o que o trouxe até a F&L.</p>
+<p>Não é necessário criar uma história extraordinária. Personagens com vidas comuns, objetivos simples e relações cotidianas têm tanto espaço nesta história quanto aqueles que viveram acontecimentos incomuns.</p>
+<div class="note">Você não precisa responder tudo de uma vez. Use as perguntas como inspiração; elas não são uma prova nem uma lista obrigatória.</div>
+<div class="chapter-grid">
+<article class="chapter"><small>01 / ORIGEM</small><h3>De onde veio?</h3><p>Local de nascimento, criação, família, infância e adolescência.</p></article>
+<article class="chapter"><small>02 / VIDA</small><h3>O que fazia?</h3><p>Estudos, trabalho, amizades, hábitos, responsabilidades e planos.</p></article>
+<article class="chapter"><small>03 / CONTATO</small><h3>O que conhecia?</h3><p>Seu primeiro contato — ou a ausência dele — com o inexplicável.</p></article>
+<article class="chapter"><small>04 / CONVOCAÇÃO</small><h3>Como chegou?</h3><p>Indicação, investigação própria, recrutamento ou acaso.</p></article>
+</div>
+</section>
+<section class="section" id="origem">
+<div class="section-kicker">II · Raízes</div><h2>Vida antes da organização</h2>
+<p>Imagine a vida que seu personagem levava antes de conhecer a F&L. Onde morava? Com quem dividia a casa? Estudava, trabalhava ou fazia as duas coisas? Tinha amigos próximos, responsabilidades familiares ou alguém de quem cuidava?</p>
+<p>A profissão pode influenciar os conhecimentos e as perícias do personagem, mas não determina sua personalidade ou seu destino.</p>
+<h3>Algumas possibilidades</h3>
+<ul><li>Estudante universitário ou pesquisador.</li><li>Profissional da saúde, professor ou jornalista.</li><li>Policial, servidor público ou técnico.</li><li>Autônomo, trabalhador do comércio ou alguém em busca de emprego.</li><li>Uma pessoa com uma rotina completamente diferente dessas opções.</li></ul>
+<div class="note">Escolha uma ocupação que faça sentido para a história. Não existe profissão obrigatória para entrar na organização.</div>
+</section>
+<section class="section" id="paranormal">
+<div class="section-kicker">III · O que não se explica</div><h2>Primeiro contato com o paranormal</h2>
+<p>Alguns personagens já presenciaram algo que não conseguiram explicar. Outros ouviram relatos, encontraram objetos estranhos ou investigaram acontecimentos incomuns. Também existem aqueles que nunca tiveram contato algum com o paranormal.</p>
+<p>Pense em como seu personagem reagiria diante de algo que desafia sua compreensão. Ele tentaria encontrar uma explicação lógica? Sentiria curiosidade? Evitaria o assunto? Procuraria respostas?</p>
+<div class="note">O contato anterior com o paranormal não é obrigatório. A descoberta pode acontecer durante a campanha.</div>
+</section>
+<section class="section" id="organizacao">
+<div class="section-kicker">IV · O chamado</div><h2>Como chegou à F&L</h2>
+<p>Existem diferentes caminhos para alguém chegar à organização. Seu personagem pode ter sido indicado por outra pessoa, recrutado por causa de sua profissão, encontrado a organização durante uma investigação própria ou recebido uma convocação inesperada.</p>
+<p>O motivo exato do recrutamento pode ser construído em conjunto com o mestre e integrado à história da campanha. Você não precisa conhecer todos os detalhes desde o começo.</p>
+</section>
+<section class="section" id="vida">
+<div class="section-kicker">V · Dentro da organização</div><h2>O que fazem na F&L?</h2>
+<p>A organização reúne pessoas com conhecimentos e funções diferentes. Nem todos precisam atuar diretamente em campo. Investigar também envolve pesquisar ocorrências antigas, analisar documentos, reunir informações, estudar fenômenos, preparar equipamentos, auxiliar colegas e participar de reuniões e orientações.</p>
+<p>O papel do personagem pode mudar conforme a campanha avança. O importante é entender por que ele está ali e o que espera encontrar.</p>
+</section>
+<section class="section" id="rotina">
+<div class="section-kicker">VI · Instantes anteriores</div><h2>O cotidiano antes da primeira missão</h2>
+<p>Imagine o que seu personagem estava fazendo pouco antes de ser chamado. Estava trabalhando? Conversava com alguém? Estudava um documento? Organizava seus pertences? Tinha acabado de chegar à organização ou já conhecia o lugar?</p>
+<p>Esses pequenos detalhes ajudam a dar vida ao personagem e tornam o início da campanha mais pessoal.</p>
+</section>
+<section class="section" id="criacao">
+<div class="section-kicker">VII · Regras de criação</div><h2>Distribuição de atributos e perícias</h2>
+<p class="lead">Todo personagem começa do zero. É você quem decide onde estão seus talentos.</p>
+<div class="columns">
+<div class="panel">
+<h3>Atributos</h3><p>Você tem <strong>5 pontos</strong> para distribuir entre os cinco atributos. Todos começam em 0.</p><div class="total"><span>Pontos distribuídos</span><strong id="attr-total">0 / 5</strong></div><div class="meter"><span id="attr-meter"></span></div><div class="stat-list" id="attributes"></div><div class="status" id="attr-status" aria-live="polite"></div>
+</div>
+<div class="panel">
+<h3>Perícias</h3><p>Você tem <strong>15 pontos</strong> para distribuir entre as dezenove perícias. Todas começam em 0.</p><div class="total"><span>Pontos distribuídos</span><strong id="skill-total">0 / 15</strong></div><div class="meter"><span id="skill-meter"></span></div><div class="stat-list" id="skills"></div><div class="status" id="skill-status" aria-live="polite"></div>
+</div>
+</div>
+<div class="note"><strong>Limite inicial:</strong> nenhum atributo ou perícia pode ultrapassar 10 pontos. Os pontos de atributos e perícias são separados: não é permitido transferir pontos de um grupo para o outro.</div>
+<div class="actions"><button class="primary" id="reset-points">Reiniciar distribuição</button><button class="secondary" id="copy-points">Copiar distribuição</button></div>
+<p class="small">A distribuição é feita nesta página. Ela não é enviada automaticamente ao mestre nem salva em uma conta.</p>
+</section>
+<section class="section" id="ficha">
+<div class="section-kicker">VIII · Construção narrativa</div><h2>Ficha de origem narrativa</h2>
+<p>Preencha os campos que já souber. Você pode deixar espaços em branco e voltar a esta ficha quando tiver novas ideias.</p>
+<form id="origin-form">
+<div class="form-block"><h3>Identidade e origem</h3><div class="field-grid">
+<div class="field"><label for="nome">Nome completo</label><input id="nome" name="Nome completo"></div>
+<div class="field"><label for="nascimento">Data de nascimento</label><input id="nascimento" name="Data de nascimento" placeholder="DD/MM/AAAA"></div>
+<div class="field"><label for="local-nasc">Local de nascimento</label><input id="local-nasc" name="Local de nascimento"></div>
+<div class="field"><label for="criacao">Onde foi criado?</label><input id="criacao" name="Onde foi criado"></div>
+<div class="field full"><label for="familia">Família e pessoas importantes</label><textarea id="familia" name="Família e pessoas importantes"></textarea></div>
+</div></div>
+<div class="form-block"><h3>Vida pessoal</h3><div class="field-grid">
+<div class="field full"><label for="infancia">Infância e adolescência</label><textarea id="infancia" name="Infância e adolescência"></textarea></div>
+<div class="field"><label for="estudos">Estudos ou formação</label><input id="estudos" name="Estudos ou formação"></div>
+<div class="field"><label for="profissao">Trabalho ou profissão</label><input id="profissao" name="Trabalho ou profissão"></div>
+<div class="field full"><label for="objetivos">Objetivos e planos</label><textarea id="objetivos" name="Objetivos e planos"></textarea></div>
+<div class="field full"><label for="personalidade">Personalidade, hábitos e medos</label><textarea id="personalidade" name="Personalidade, hábitos e medos"></textarea></div>
+</div></div>
+<div class="form-block"><h3>Contato com o desconhecido</h3><div class="field-grid">
+<div class="field full"><label for="contato">Já teve contato com algo inexplicável?</label><textarea id="contato" name="Contato inexplicável" placeholder="Pode escrever 'não' ou deixar em branco."></textarea></div>
+<div class="field"><label for="crencas">Crenças ou opiniões</label><textarea id="crencas" name="Crenças ou opiniões"></textarea></div>
+<div class="field"><label for="reacao">Como reagiria ao paranormal?</label><textarea id="reacao" name="Reação ao paranormal"></textarea></div>
+</div></div>
+<div class="form-block"><h3>Entrada na organização</h3><div class="field-grid">
+<div class="field"><label for="recrutamento">Como chegou à F&L?</label><select id="recrutamento" name="Como chegou à F&L"><option value="">Selecione, se já souber</option><option>Indicação</option><option>Recrutamento</option><option>Investigação própria</option><option>Contato profissional</option><option>Convocação inesperada</option><option>A definir com o mestre</option></select></div>
+<div class="field"><label for="motivo">Por que aceitou?</label><textarea id="motivo" name="Por que aceitou"></textarea></div>
+<div class="field full"><label for="rotina">O que fazia antes da primeira missão?</label><textarea id="rotina" name="Rotina antes da primeira missão"></textarea></div>
+</div></div>
+<div class="form-block"><h3>Informações de personagem</h3><div class="field-grid">
+<div class="field"><label for="classe">Classe ou função</label><input id="classe" name="Classe ou função"></div>
+<div class="field"><label for="papel">Papel no grupo</label><input id="papel" name="Papel no grupo"></div>
+<div class="field"><label for="elemento">Elemento</label><input id="elemento" name="Elemento"></div>
+<div class="field"><label for="ocupacao">Origem ou ocupação</label><input id="ocupacao" name="Origem ou ocupação"></div>
+<div class="field full"><label for="notas">Anotações adicionais para o mestre (opcional)</label><textarea id="notas" name="Anotações adicionais"></textarea></div>
+</div></div>
+<div class="actions"><button type="button" class="primary" id="generate">Gerar ficha em texto</button><button type="reset" class="secondary">Limpar formulário</button></div>
+</form>
+<div class="panel" id="result-panel" hidden><h3>Ficha narrativa gerada</h3><textarea id="output" readonly></textarea><div class="actions"><button class="primary" id="copy-origin">Copiar ficha</button></div></div>
+</section>
+</main>
+<footer><div class="ornament">✦</div><div>F&L — FANÁTICOS E LOUCOS</div><p>Manual do Jogador · Material de apoio à campanha</p></footer>
+<script>
+const attrs=['Corpo','Agilidade','Intelecto','Presença','Vontade'];
+const skills=['Atletismo','Furtividade','Pontaria','Luta','Reflexos','Investigação','Medicina','Ciências','Ocultismo','Tecnologia','História','Enganação','Intimidação','Persuasão','Percepção','Intuição','Concentração','Resistência','Autocontrole'];
+const a=Object.fromEntries(attrs.map(x=>[x,0])),s=Object.fromEntries(skills.map(x=>[x,0]));
+function draw(list,obj,id,totalId,meterId,statusId,maxPoints){
+ const root=document.getElementById(id);root.innerHTML='';
+ list.forEach(name=>{
+  const row=document.createElement('div');row.className='stat-row';
+  const label=document.createElement('span');label.className='stat-name';label.textContent=name;
+  const counter=document.createElement('div');counter.className='counter';
+  const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Remover ponto de '+name);
+  const val=document.createElement('span');val.className='value';val.textContent=obj[name];
+  const plus=document.createElement('button');plus.type='button';plus.textContent='+ ';plus.setAttribute('aria-label','Adicionar ponto em '+name);
+  minus.disabled=obj[name]===0;plus.disabled=obj[name]>=10||sum(obj)>=maxPoints;
+  minus.addEventListener('click',()=>{obj[name]--;render()});
+  plus.addEventListener('click',()=>{if(obj[name]<10&&sum(obj)<maxPoints)obj[name]++;render()});
+  counter.append(minus,val,plus);row.append(label,counter);root.append(row);
+ });
+ const n=sum(obj);document.getElementById(totalId).textContent=n+' / '+maxPoints;
+ document.getElementById(meterId).style.width=(n/maxPoints*100)+'%';
+ const status=document.getElementById(statusId);
+ status.textContent=n===maxPoints?'Distribuição completa.':(maxPoints-n)+' ponto(s) restante(s).';
+ status.className='status';
+}
+function sum(o){return Object.values(o).reduce((x,y)=>x+y,0)}
+function render(){draw(attrs,a,'attributes','attr-total','attr-meter','attr-status',5);draw(skills,s,'skills','skill-total','skill-meter','skill-status',15)}
+render();
+document.getElementById('reset-points').onclick=()=>{Object.keys(a).forEach(k=>a[k]=0);Object.keys(s).forEach(k=>s[k]=0);render()};
+document.getElementById('copy-points').onclick=()=>{const t='F&L — DISTRIBUIÇÃO INICIAL\n\nATRIBUTOS\n'+attrs.map(k=>k+': '+a[k]).join('\n')+'\nTotal: '+sum(a)+'/5\n\nPERÍCIAS\n'+skills.map(k=>k+': '+s[k]).join('\n')+'\nTotal: '+sum(s)+'/15';copyText(t)};
+function copyText(t){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(()=>alert('Texto copiado!')).catch(()=>fallback(t))}else fallback(t)}
+function fallback(t){const x=document.createElement('textarea');x.value=t;document.body.append(x);x.select();document.execCommand('copy');x.remove();alert('Texto copiado!')}
+document.getElementById('generate').onclick=()=>{
+ const f=document.getElementById('origin-form');const lines=['F&L — FICHA DE ORIGEM NARRATIVA',''];
+ for(const el of f.elements){if(!el.name||el.type==='button'||el.type==='reset')continue;const v=el.value.trim();if(v)lines.push(el.name+':\n'+v+'\n')}
+ lines.push('DISTRIBUIÇÃO DE ATRIBUTOS');attrs.forEach(k=>lines.push(k+': '+a[k]));lines.push('Total: '+sum(a)+'/5','');
+ lines.push('DISTRIBUIÇÃO DE PERÍCIAS');skills.forEach(k=>lines.push(k+': '+s[k]));lines.push('Total: '+sum(s)+'/15');
+ document.getElementById('output').value=lines.join('\n');document.getElementById('result-panel').hidden=false;document.getElementById('result-panel').scrollIntoView({behavior:'smooth'});
+};
+document.getElementById('copy-origin').onclick=()=>copyText(document.getElementById('output').value);
+</script>
+</body>
+</html>
