@@ -38,8 +38,9 @@ h2{font:22px 'IM Fell English',serif;margin:22px 0 10px}
 @media(max-width:620px){body{padding:15px 7px}.sheet{padding:35px 22px 45px}.columns{columns:1}.edition{justify-content:center}.papername{font-size:2.6rem}}
 @media print{body{background:white;padding:0}.back{display:none}.sheet{box-shadow:none;max-width:none;clip-path:none;min-height:100vh}}
 
-/* Legibilidade: toda a escrita impressa e manuscrita em preto */
-.sheet, .sheet *{color:#000!important}
+
+/* CONTRASTE: força texto preto em todos os elementos, inclusive links e textos estilizados */
+html body, html body * { color: #000 !important; -webkit-text-fill-color: #000 !important; }
 </style>
 </head>
 <body>
