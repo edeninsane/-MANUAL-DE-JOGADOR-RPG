@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171411">
+<title>Recorte incompleto — 1976 | A investigação sobre Collin</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#171411}
+body{padding:30px 12px 55px;font-family:'Libre Baskerville',Georgia,serif;color:#000}
+.back{display:block;max-width:900px;margin:0 auto 18px;color:#c2a77d;text-decoration:none;font:12px 'Special Elite',monospace;letter-spacing:.12em}
+.canvas{position:relative;max-width:900px;min-height:1060px;margin:auto;padding:25px 18px 60px;filter:drop-shadow(0 18px 28px #0009)}
+.scrap{position:relative;overflow:hidden;background:#d8c9a8;background-image:repeating-linear-gradient(0deg,#58452a08 0px,#58452a08 1px,transparent 1px,transparent 4px),linear-gradient(95deg,#6f57351a,transparent 11%,transparent 90%,#6f57351c);padding:22px 26px;margin:0 auto 18px;box-shadow:0 4px 14px #0005}
+.scrap:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 4% 22%,#5b201d80 0 1.5%,#5b201d2b 3%,transparent 8%),radial-gradient(ellipse at 94% 88%,#5a211f7a 0 2%,#5a211f22 4%,transparent 9%),radial-gradient(ellipse at 78% 4%,#654e302e 0 2%,transparent 8%);mix-blend-mode:multiply}
+.scrap:after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #6d573b55;clip-path:polygon(0 1%,7% 0,14% 1%,22% 0,31% 1%,40% 0,50% 1%,60% 0,69% 1%,78% 0,87% 1%,100% 0,99% 12%,100% 24%,99% 36%,100% 48%,99% 60%,100% 72%,99% 84%,100% 100%,90% 99%,80% 100%,70% 99%,60% 100%,50% 99%,40% 100%,30% 99%,20% 100%,10% 99%,0 100%,1% 88%,0 76%,1% 64%,0 52%,1% 40%,0 28%,1% 16%)}
+.mast{border-top:4px double #241c14;border-bottom:4px double #241c14;text-align:center;padding:8px 0 10px}
+.papername{font:clamp(2.2rem,7vw,4rem)/.95 'IM Fell English',Georgia,serif;letter-spacing:-.04em}
+.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:9px;font:10px 'Special Elite',monospace;letter-spacing:.08em}
+h1{font:clamp(1.8rem,5vw,3rem)/1.02 'IM Fell English',Georgia,serif;text-align:left;margin:8px 0}
+h2{font:21px 'IM Fell English',Georgia,serif;margin:14px 0 6px}
+p{font-size:12px;line-height:1.8;margin:7px 0;text-align:justify}
+.kicker{font:11px 'Special Elite',monospace;letter-spacing:.16em;text-transform:uppercase;margin-bottom:7px}
+.columns{columns:2;column-gap:24px}.columns p{break-inside:avoid}
+.small{font:10px 'Special Elite',monospace;letter-spacing:.06em}
+.fragment{width:95%;transform:rotate(-.6deg);margin-left:2%}
+.fragment.two{width:87%;margin-left:8%;transform:rotate(1deg)}
+.fragment.three{width:92%;margin-left:1%;transform:rotate(.4deg)}
+.fragment.four{width:79%;margin-left:16%;transform:rotate(-1.3deg)}
+.torn{clip-path:polygon(0 2%,7% 0,14% 2%,24% 0,33% 2%,42% 0,52% 2%,63% 0,72% 2%,82% 0,92% 2%,100% 0,99% 13%,100% 25%,98% 37%,100% 50%,99% 63%,100% 75%,98% 87%,100% 100%,91% 98%,82% 100%,72% 98%,61% 100%,51% 98%,40% 100%,29% 98%,19% 100%,8% 98%,0 100%,2% 86%,0 73%,2% 61%,0 49%,2% 37%,0 25%,2% 13%)}
+.rule{border:0;border-top:1px solid #65543c;margin:12px 0}
+.cross{text-decoration:line-through;text-decoration-color:#742c28;text-decoration-thickness:2px}
+.ink{color:#6f2926;font:italic 15px 'IM Fell English',serif;transform:rotate(-1deg);margin:12px 4px}
+.note{border-left:3px solid #6f2926;padding-left:10px;color:#6f2926;font:italic 14px/1.4 'IM Fell English',serif;margin:12px 0}
+.blackout{background:#211a16;color:#211a16;padding:0 15px}
+.stamp{display:inline-block;border:3px double #6f2926;color:#6f2926!important;padding:6px 9px;font:11px 'Special Elite',monospace;letter-spacing:.13em;transform:rotate(-7deg)}
+.paperbox{max-width:490px;margin:13px auto 16px;padding:13px 16px 17px;background:#c8b995;border:1px solid #746449;box-shadow:0 3px 8px #0005;transform:rotate(.8deg);font:11px 'Special Elite',monospace}
+.paperbox .line{border-bottom:1px solid #6c5d45;padding:7px 0;display:flex;justify-content:space-between;gap:16px}
+.paperbox strong{font:17px 'IM Fell English',serif}
+.tearline{height:12px;margin:4px 0 18px;background:linear-gradient(175deg,transparent 40%,#171411 43%,#171411 48%,transparent 52%);opacity:.75}
+.footer{border-top:3px double #241c14;text-align:center;padding-top:9px;margin-top:14px;font:9px 'Special Elite',monospace;letter-spacing:.1em}
+html body,html body *{color:#000!important;-webkit-text-fill-color:#000!important}
+html body .ink,html body .note,html body .stamp{color:#6f2926!important;-webkit-text-fill-color:#6f2926!important}
+html body .blackout{color:#211a16!important;-webkit-text-fill-color:#211a16!important}
+@media(max-width:600px){body{padding:14px 5px 30px}.canvas{padding:10px 4px}.scrap{padding:18px 17px;margin-bottom:12px}.columns{columns:1}.fragment.two,.fragment.four{width:95%;margin-left:3%}.meta{justify-content:center}}
+@media print{body{background:white;padding:0}.back{display:none}.canvas{filter:none}.scrap{box-shadow:none}}
+</style>
+</head>
+<body>
+<a class="back" href="../documentos.html">← VOLTAR AO ARQUIVO DE DOCUMENTOS</a>
+<main class="canvas">
+<article class="scrap torn fragment">
+<header class="mast">
+<div class="papername">Diário da Capital</div>
+<div class="meta"><span>EDIÇÃO DE QUARTA-FEIRA</span><span>14 DE JULHO DE 1976</span><span>CR$ 3,00</span></div>
+</header>
+<div class="kicker">CIDADE · SEGURANÇA PÚBLICA · REGIÃO SERRANA</div>
+<h1>Policial consulta registros antigos do Hospício Collin; nome de auxiliar chama atenção</h1>
+<p><i>Movimentação noturna e documentos contraditórios levam investigador a buscar informações sobre o diretor Edward Collin e um funcionário identificado apenas como Carlos.</i></p>
+<hr class="rule">
+<div class="columns">
+<p>As reclamações sobre a movimentação noturna no Hospício Collin parecem ter despertado o interesse de um investigador da delegacia responsável pela região. Nos últimos dias, o policial teria consultado registros públicos e solicitado esclarecimentos sobre a administração da instituição.</p>
+<p>Segundo uma fonte ouvida por esta reportagem, o investigador procura estabelecer uma sequência de fatos envolvendo os caminhões que entram na propriedade durante a madrugada. A apuração, ainda sem confirmação de inquérito formal, também inclui a conferência de documentos relacionados ao funcionamento do estabelecimento.</p>
+<p>O diretor, Dr. Edward Collin, está à frente do hospício desde sua fundação, em 1940. A instituição construiu ao longo dos anos uma imagem de atendimento reservado e administração particular. Entretanto, a ausência de informações sobre determinados serviços e funcionários passou a ser questionada por pessoas que acompanham o caso.</p>
+<p>Entre os nomes mencionados nos papéis consultados está o de Carlos, descrito em registros internos como ajudante da instituição. Não foi possível confirmar quando ele começou a trabalhar no local, quais seriam suas atribuições ou a quem responde diretamente.</p>
+<p>Uma pessoa familiarizada com a rotina administrativa afirmou que Carlos passou a ser visto com frequência em áreas de serviço e próximo ao setor responsável pelo recebimento de materiais. A mesma fonte não soube informar se ele participa da conferência das entregas ou se apenas auxilia os funcionários encarregados.</p>
+<p>O investigador teria solicitado cópias de registros de entrada e saída, além de uma relação de pessoas autorizadas a circular pelas dependências externas. Não há informação de que a direção tenha atendido ao pedido.</p>
+<p>Procurada novamente, a secretaria do Hospício Collin declarou que não comenta “procedimentos internos de pessoal” e classificou as perguntas sobre os caminhões como especulação. O Dr. Edward Collin não foi localizado para entrevista.</p>
+</div>
+</article>
+
+<div class="tearline"></div>
+
+<article class="scrap torn fragment two">
+<div class="kicker">TRECHO PRESERVADO · DOCUMENTOS CONSULTADOS</div>
+<h2>Um nome em papéis diferentes</h2>
+<p>A reportagem teve acesso a uma reprodução parcial de um livro de registros. O nome de Carlos aparece em uma anotação referente ao recebimento de materiais, mas não consta na cópia da relação de funcionários que acompanhava o documento.</p>
+<p>Não é possível afirmar se a ausência decorre de uma falha de registro, de uma contratação recente ou de outra circunstância. A secretaria da instituição não respondeu à pergunta específica sobre a diferença entre as duas folhas.</p>
+<p>Também foram encontrados formulários com o nome de Edward Collin em datas distintas, embora nem todos apresentem assinatura legível ou identificação do funcionário responsável pelo preenchimento.</p>
+<p class="small">[AQUI FALTAVA UMA COLUNA INTEIRA. A BORDA DO PAPEL FOI CORTADA, LEVANDO PARTE DO TEXTO.]</p>
+<div class="note">“O mesmo nome aparece onde não deveria — e falta onde deveria estar.”</div>
+</article>
+
+<article class="scrap torn fragment three">
+<div class="kicker">QUADRO LATERAL · POSIÇÃO DA DELEGACIA</div>
+<p>Em contato telefônico, a delegacia informou que não divulgará nomes de agentes envolvidos em consultas preliminares. Também não confirmou a existência de uma investigação específica contra o Hospício Collin.</p>
+<p>Um funcionário limitou-se a dizer que reclamações podem ser verificadas quando acompanhadas de documentos e relatos identificáveis.</p>
+<p class="ink">A resposta chegou depois do fechamento da edição. O envelope não trazia remetente.</p>
+<hr class="rule">
+<div class="stamp">TRECHO SOB RESSALVA</div>
+<p class="small">A redação não conseguiu confirmar se o investigador continua autorizado a consultar os registros mencionados.</p>
+</article>
+
+<article class="scrap torn fragment four">
+<div class="kicker">ANOTAÇÕES A LÁPIS NO VERSO DO RECORTE</div>
+<div class="paperbox">
+<strong>Conferir antes de arquivar</strong>
+<div class="line"><span>EDWARD COLLIN</span><span>1940 — presente</span></div>
+<div class="line"><span>CARLOS</span><span>ajudante · data ausente</span></div>
+<div class="line"><span>REGISTRO DE ENTREGA</span><span>assinatura ilegível</span></div>
+<div class="line"><span>PORTÃO LATERAL</span><span>madrugada</span></div>
+</div>
+<p class="ink">Carlos não aparece na relação de funcionários. Mas alguém escreveu o nome dele nos recibos.</p>
+<p class="ink">Descobrir quem autorizou a entrada. Não confiar apenas na secretaria.</p>
+<p class="ink"><span class="cross">Entregar cópias à chefia.</span> Guardar uma via.</p>
+<p class="small">[UMA FRASE FOI APAGADA COM FORÇA. RESTAM APENAS MARCAS NO PAPEL.]</p>
+<div class="footer">DIÁRIO DA CAPITAL · RECORTE SEM PÁGINA ORIGINAL<br>ARQUIVO DE IMPRENSA · JULHO DE 1976</div>
+</article>
+</main>
+</body>
+</html>
