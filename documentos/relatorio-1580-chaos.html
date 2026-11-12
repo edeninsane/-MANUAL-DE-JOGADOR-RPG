@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#28241f"><title>Relatório técnico — Projeto 1580</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Special+Elite&family=Caveat:wght@400;500;600&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#28241f}
+body{padding:24px 12px 48px;font-family:'Special Elite',monospace;color:#000}
+.sheet{position:relative;isolation:isolate;overflow:hidden;width:min(850px,100%);min-height:1080px;margin:0 auto;padding:clamp(34px,6vw,62px) clamp(22px,6vw,64px) 58px;background:radial-gradient(ellipse at 8% 10%,#92784b30 0 2%,transparent 18%),radial-gradient(ellipse at 92% 86%,#72553226 0 4%,transparent 24%),repeating-linear-gradient(0deg,transparent 0 25px,#8a76511a 26px,transparent 27px),linear-gradient(115deg,#e6d9bd,#ddcba7 54%,#d7c39b);border:1px solid #927d5e;box-shadow:0 15px 42px #0009;clip-path:polygon(1% .3%,8% .5%,14% .1%,22% .5%,30% .1%,38% .5%,46% .2%,54% .5%,62% .1%,70% .5%,78% .15%,86% .5%,94% .1%,99% .5%,99.5% 8%,99% 17%,99.5% 26%,99% 35%,99.4% 45%,99% 55%,99.5% 65%,99% 76%,99.4% 86%,99% 96%,96% 99.5%,88% 99.1%,80% 99.6%,72% 99.2%,64% 99.6%,56% 99.2%,48% 99.6%,40% 99.2%,32% 99.6%,24% 99.2%,16% 99.6%,8% 99.2%,1% 99.5%,.5% 90%,1% 80%,.5% 70%,1% 60%,.5% 50%,1% 40%,.5% 30%,1% 20%,.5% 10%)}
+.sheet:before{content:"";position:absolute;z-index:-1;inset:13px;border:1px solid #6b58352e;pointer-events:none}
+.topline{display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid #1c1711;padding-bottom:12px;font-size:12px;letter-spacing:1.3px;text-transform:uppercase}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+h1{font-size:clamp(32px,6vw,48px);line-height:1;margin:16px 0 7px;font-weight:700;letter-spacing:1.5px}
+.subtitle{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:24px}
+.stamp{display:inline-block;border:2px solid #17110d;padding:6px 10px;font:bold 12px 'Special Elite',monospace;letter-spacing:1.4px;transform:rotate(-3deg);margin:4px 0 16px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;border-top:1px solid #4c3f2d;border-bottom:1px solid #4c3f2d;padding:13px 0;margin:14px 0 22px;font-size:13px}
+.fields div{min-height:22px}
+.fields b{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.6px;text-transform:uppercase;margin-right:5px}
+section{margin:20px 0}
+h2{font-size:24px;margin:0 0 8px;border-bottom:1px solid #68583c;padding-bottom:4px}
+p{font-size:13px;line-height:1.7;margin:8px 0}
+ul{font-size:13px;line-height:1.7;padding-left:22px}
+li{margin:4px 0}
+.note{margin:18px 0 12px;padding:12px 14px;border-left:2px solid #2c2117;background:#75613c17;font-size:13px;line-height:1.65}
+.hand{font:24px/1.25 'Caveat',cursive;margin:18px 7px 0 24px;transform:rotate(-1deg)}
+.hand p{font:inherit;line-height:1.35}
+.signature{text-align:right;font:28px 'Caveat',cursive;margin:14px 22px 0}
+.footer{margin-top:30px;border-top:1px solid #68583c;padding-top:10px;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.8px;text-transform:uppercase}
+.missing{display:inline-block;background:#342a1e;color:transparent!important;-webkit-text-fill-color:transparent!important;padding:0 14px;border-radius:1px}
+.watermark{position:absolute;right:32px;top:46%;transform:rotate(-20deg);font:700 34px 'Cormorant Garamond',serif;letter-spacing:3px;border:3px double #231a12;padding:9px 13px;opacity:.13;z-index:-1}
+.tear{position:absolute;left:0;top:37%;width:10px;height:80px;background:#28241f;clip-path:polygon(0 0,80% 8%,20% 25%,100% 40%,15% 60%,75% 74%,0 100%);opacity:.82}
+html body,html body *{color:#000!important;-webkit-text-fill-color:#000!important}
+html body .missing{color:transparent!important;-webkit-text-fill-color:transparent!important}
+@media(max-width:560px){body{padding:12px 6px 28px}.sheet{padding:32px 21px 42px;min-height:1000px}.fields{grid-template-columns:1fr}.topline{font-size:10px}.hand{margin-left:10px}}
+@media print{html,body{background:#fff}.sheet{box-shadow:none;clip-path:none;min-height:100vh}}
+</style></head>
+<body><main class="sheet"><span class="tear"></span><div class="watermark">CONFIDENCIAL</div>
+<div class="topline"><span>Hospício Collin · Direção de pesquisa</span><span>1580</span></div>
+<div class="stamp">NÃO É PRONTUÁRIO CLÍNICO</div>
+<h1>Relatório de finalidade experimental</h1><div class="subtitle">Projeto 1580 · Documento técnico interno</div>
+<div class="fields">
+<div><b>Identificação:</b> Chaos</div><div><b>Código:</b> 1580</div>
+<div><b>Natureza:</b> Protótipo experimental</div><div><b>Data:</b> 28 de julho de 1969</div>
+<div><b>Responsável pelo projeto:</b> Marcos Elbert</div><div><b>Encaminhamento:</b> Direção técnica</div>
+<div><b>Arquivo:</b> Pesquisa biológica</div><div><b>Circulação:</b> Restrita</div>
+</div>
+<section><h2>1. Natureza do projeto</h2>
+<p>O código 1580 identifica um protótipo desenvolvido no âmbito de um programa experimental da instituição. Não se trata de um paciente admitido pelos procedimentos comuns, tampouco de um indivíduo encaminhado por familiares. Por determinação da direção, seus registros não deverão ser incorporados ao arquivo geral de internações.</p>
+<p>A designação “Chaos” é utilizada nos documentos de pesquisa para identificar o protótipo. Não consta sobrenome, registro familiar ou histórico civil completo no material consultado.</p></section>
+<section><h2>2. Finalidade</h2>
+<p>O objetivo do Projeto 1580 é avaliar a possibilidade de produzir um modelo experimental que possa servir de referência para etapas posteriores de pesquisa. O protótipo foi concebido para observação de compatibilidade, estabilidade e resposta aos parâmetros definidos pela equipe responsável.</p>
+<p>O resultado esperado não se limita à observação de um caso individual. Pretende-se determinar se os resultados obtidos podem ser registrados, comparados e considerados úteis para a continuidade do programa.</p></section>
+<section><h2>3. Acompanhamento e resultados</h2>
+<p>Os relatórios disponíveis descrevem respostas consideradas incomuns pelos pesquisadores e compatibilidade acima da inicialmente esperada com o parâmetro experimental designado nos arquivos como KÁKÉR. A documentação preservada não contém a descrição integral dos critérios utilizados para essa avaliação.</p>
+<p>O responsável pelo projeto recomenda que o protótipo não seja tratado como modelo concluído. Os resultados obtidos são considerados promissores, mas insuficientes para autorizar a reprodução do procedimento ou a ampliação do projeto sem nova decisão da direção.</p></section>
+<section><h2>4. Determinações administrativas</h2>
+<ul><li>Manter o código 1580 em todos os documentos relacionados ao projeto.</li><li>Não criar prontuário clínico comum para o protótipo.</li><li>Separar relatórios técnicos de registros de pacientes internados.</li><li>Registrar toda mudança de custódia, localização ou responsável.</li><li>Não divulgar a finalidade do projeto a funcionários sem autorização expressa.</li></ul>
+</section>
+<section><h2>5. Observação final</h2>
+<p>O protótipo 1580 deverá permanecer como referência para a continuidade da pesquisa. Sua função não deve ser confundida com a de um paciente em tratamento, nem descrita em documentos destinados a familiares.</p>
+<p>A direção solicita que futuras avaliações sejam encaminhadas diretamente ao responsável pelo programa, sem inclusão no arquivo de circulação comum.</p></section>
+<div class="note"><b>Nota de arquivo:</b> Não foi localizada a página que descreve os critérios completos de compatibilidade. A cópia preservada termina antes da assinatura final.</div>
+<div class="hand"><p>“O projeto não deve ser encerrado apenas porque o protótipo respondeu. Ainda não sabemos se ele serve ao propósito para o qual foi criado.”</p></div>
+<div class="signature">M. E.</div>
+<div class="footer"><span>Hospício Collin · Pesquisa restrita</span><span>Documento técnico · 4 folhas previstas</span></div>
+</main></body></html>
