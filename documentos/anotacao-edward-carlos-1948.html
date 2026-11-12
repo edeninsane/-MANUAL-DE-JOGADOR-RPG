@@ -3,54 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Folha manuscrita — 1948</title>
+<meta name="theme-color" content="#29251f">
+<title>Folha sem identificação</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Caveat:wght@400;500;600&display=swap');
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:25px 14px;background:#29251f;display:flex;justify-content:center;align-items:flex-start}
-.paper{position:relative;width:min(790px,100%);min-height:900px;padding:58px clamp(25px,7vw,76px) 70px;background:linear-gradient(115deg,#e5d8ba,#d9c9a7 48%,#d2c09b);box-shadow:0 14px 55px #0009;border:1px solid #9d8969;overflow:hidden;transform:rotate(-.3deg)}
-.paper:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 31px,#806d5012 32px),radial-gradient(ellipse at 12% 8%,#fff4 0 3%,transparent 23%),radial-gradient(ellipse at 91% 89%,#7a573522 0 8%,transparent 28%)}
-.paper:after{content:"";position:absolute;inset:12px;border:1px solid #7c694a30;pointer-events:none}
-.stain{position:absolute;pointer-events:none;border-radius:50%;background:radial-gradient(ellipse,#6c4c2d55 0 12%,#8c6c4530 38%,transparent 72%);filter:blur(1px)}
-.one{width:190px;height:110px;top:34px;right:-45px;transform:rotate(-22deg)}
-.two{width:130px;height:160px;bottom:62px;left:-60px;transform:rotate(30deg)}
-.hand{position:relative;font:clamp(23px,3.3vw,29px)/1.34 'Caveat','Segoe Print',cursive;letter-spacing:.15px;transform:rotate(-.25deg)}
-.hand p{margin:0 0 17px}
-.indent{padding-left:24px}
-.cross{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#47382c;opacity:.8}
-.blotted{display:inline-block;background:#332b23;color:transparent!important;padding:0 12px;height:.72em;vertical-align:baseline;border-radius:2px;transform:rotate(-1deg)}
-.margin{position:relative;font:20px 'Caveat',cursive;text-align:right;transform:rotate(-4deg);margin:10px 12px 18px}
-.signature{position:relative;text-align:right;font:28px 'Caveat',cursive;margin-top:28px;transform:rotate(-3deg)}
-.fold{position:absolute;left:0;right:0;top:62%;height:2px;background:linear-gradient(90deg,transparent,#8c78554a 20%,#fff3 50%,#8c785544 80%,transparent)}
-/* CONTRASTE */
+html,body{margin:0;min-height:100%;background:#29251f}
+body{min-height:100vh;padding:28px 14px 48px;display:flex;justify-content:center;align-items:flex-start}
+.outer{position:relative;width:min(790px,100%);filter:drop-shadow(0 16px 30px #0009);transform:rotate(-.35deg)}
+.paper{
+ position:relative;isolation:isolate;overflow:hidden;min-height:1050px;
+ padding:clamp(48px,7vw,78px) clamp(25px,8vw,82px) 72px;
+ background:
+  radial-gradient(ellipse at 8% 13%,#86643c42 0 2%,transparent 18%),
+  radial-gradient(ellipse at 91% 22%,#78563332 0 3%,transparent 19%),
+  radial-gradient(ellipse at 17% 88%,#6c4d2d30 0 4%,transparent 21%),
+  radial-gradient(ellipse at 83% 91%,#775a3838 0 5%,transparent 23%),
+  repeating-linear-gradient(8deg,transparent 0 19px,#806b4a0c 20px,#fff1 21px,transparent 23px),
+  linear-gradient(112deg,#e5d8bd 0%,#e0d0ae 42%,#d8c6a1 100%);
+ border:1px solid #8d7857;
+ clip-path:polygon(1.2% .3%,4% .7%,7% .2%,10% .55%,14% .15%,18% .55%,22% .15%,28% .5%,34% .2%,40% .55%,46% .18%,53% .55%,60% .15%,67% .48%,74% .12%,81% .52%,88% .18%,94% .55%,98.8% .2%,99.4% 5%,99% 11%,99.5% 18%,99% 25%,99.4% 33%,98.9% 41%,99.5% 50%,99% 58%,99.4% 66%,98.9% 74%,99.5% 82%,99% 90%,99.4% 96%,97% 99.6%,92% 99.2%,87% 99.7%,80% 99.25%,74% 99.7%,67% 99.3%,60% 99.7%,53% 99.3%,46% 99.75%,39% 99.25%,32% 99.7%,25% 99.25%,18% 99.7%,12% 99.3%,7% 99.7%,2% 99.25%,.6% 95%,1% 88%,.5% 80%,1% 72%,.5% 64%,1% 56%,.5% 48%,1% 40%,.5% 32%,1% 24%,.5% 16%,1% 8%);
+}
+.paper:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+ background:
+  linear-gradient(132deg,transparent 0 36%,#6b56351a 36.1%,transparent 36.5%),
+  linear-gradient(131deg,transparent 0 36.2%,#fff4 36.3%,transparent 36.8%),
+  linear-gradient(18deg,transparent 0 69%,#7057351d 69.15%,transparent 69.45%),
+  linear-gradient(18deg,transparent 0 69.4%,#fff4 69.5%,transparent 69.8%),
+  radial-gradient(ellipse at 50% 52%,transparent 0 55%,#6f57351a 100%);
+}
+.paper:after{
+ content:"";position:absolute;inset:15px;z-index:3;pointer-events:none;opacity:.6;
+ background:
+  linear-gradient(126deg,transparent 0 78%,#6d533026 78.12%,transparent 78.35%),
+  linear-gradient(129deg,transparent 0 78.4%,#fff5 78.5%,transparent 78.75%),
+  linear-gradient(90deg,transparent 0 96%,#8a704a24 96.2%,transparent 96.7%);
+}
+.ink{
+ position:relative;z-index:2;color:#17120e;
+ font-family:'Marck Script','Caveat',cursive;
+ font-size:clamp(25px,3.3vw,30px);line-height:1.47;
+ letter-spacing:.12px;
+ transform:rotate(-.28deg);
+ text-shadow:.25px .15px #17120e;
+}
+.ink p{margin:0 0 19px}
+.ink p:nth-child(3n){padding-left:12px}
+.ink p:nth-child(4n){transform:rotate(.18deg)}
+.ink p:nth-child(7n){padding-left:25px}
+.pause{margin-top:28px!important}
+.signature{position:relative;text-align:right;margin:37px 16px 0 0!important;font-size:35px;transform:rotate(-5deg)}
+.stain{position:absolute;z-index:1;pointer-events:none;border-radius:50%;mix-blend-mode:multiply}
+.stain-a{width:190px;height:125px;top:18px;right:-48px;background:radial-gradient(ellipse,#77553145 0 8%,#8c6d4530 35%,transparent 72%);transform:rotate(-19deg);filter:blur(2px)}
+.stain-b{width:150px;height:195px;bottom:28px;left:-75px;background:radial-gradient(ellipse,#76502d38 0 8%,#8d6a3c24 42%,transparent 75%);transform:rotate(27deg);filter:blur(2px)}
+.stain-c{width:75px;height:65px;top:46%;left:8%;background:radial-gradient(ellipse,#80613b25 0 12%,transparent 70%);filter:blur(1px)}
+.tear{position:absolute;z-index:4;pointer-events:none;background:#29251f}
+.tear-left{left:-1px;top:35%;width:13px;height:78px;clip-path:polygon(0 0,70% 8%,28% 22%,100% 34%,22% 52%,78% 68%,15% 84%,0 100%);opacity:.9}
+.tear-bottom{right:14%;bottom:-1px;width:94px;height:11px;clip-path:polygon(0 50%,13% 0,27% 76%,44% 15%,59% 90%,75% 18%,100% 55%,100% 100%,0 100%);opacity:.8}
+.fold{position:absolute;z-index:2;left:4%;right:4%;top:62%;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,#7e694a42 18%,#fff5 50%,#806b4b3d 83%,transparent);box-shadow:0 3px 5px #70593618}
 html body,html body *{color:#000!important;-webkit-text-fill-color:#000!important}
-html body .blotted{color:transparent!important;-webkit-text-fill-color:transparent!important}
-@media print{body{background:white;padding:0}.paper{box-shadow:none;transform:none;width:100%;min-height:100vh}}
+@media(max-width:520px){body{padding:14px 7px 28px}.paper{min-height:1100px;padding:48px 24px 58px}.ink{font-size:25px;line-height:1.48}.ink p{margin-bottom:17px}}
+@media print{html,body{background:white}.outer{filter:none;transform:none}.paper{clip-path:none;min-height:100vh}}
 </style>
 </head>
 <body>
-<main class="paper">
-<span class="stain one"></span><span class="stain two"></span>
-<section class="hand">
-<p>Não devia ter voltado àquele lugar.</p>
-<p>Disse a mim mesmo que seria apenas uma bebida, uma hora fora de casa, talvez duas. O bastante para não ouvir o silêncio. O bastante para não olhar para os quartos vazios.</p>
-<p>O homem estava lá outra vez. Carlos. Não sei se já o tinha visto antes ou se apenas reconheci a maneira como me observava. Falou comigo sem pedir licença, como se nossa conversa tivesse sido interrompida na noite anterior.</p>
-<p>Não perguntou como eu estava. Perguntou se eu ainda pensava nelas.</p>
-<p>Respondi que não sabia do que estava falando. Ele não insistiu. Apenas mencionou Cast e, depois, Margareth. Não ofereceu condolências. Não demonstrou surpresa ao perceber que eu queria encerrar o assunto.</p>
-<p class="indent">Como pode saber dessas coisas?</p>
-<p>Disse que conhecia um meio de me mostrar algo. Não explicou o que era. Quando perguntei se estava falando de uma fotografia, de cartas ou de alguma lembrança, respondeu que eu estava pensando pequeno demais.</p>
-<p>Deveria ter ido embora. Escrevo isso agora porque não fui.</p>
-<p>Ele disse que não estava me pedindo fé. Queria apenas que eu o acompanhasse até um lugar, em outra ocasião. Falou que eu poderia decidir depois de ver. Não gostei da segurança com que disse isso.</p>
-<p>O endereço ficou no recibo. A chuva — ou minha mão — estragou quase tudo. Ainda consigo ler <span class="cross">Rua</span> <span class="blotted">██████</span> e talvez o número seja 17. Talvez não.</p>
-<p class="margin">Três marcas no verso. Não parecem letras. Não mostrar a ninguém.</p>
-<p>Também não devo contar a Martin. Não há razão para envolver o menino em mais uma das minhas decisões.</p>
-<p>Talvez Carlos seja um vigarista. Talvez tenha conhecido alguém da família. Talvez tenha lido os jornais e esteja se aproveitando de um homem que já não sabe distinguir esperança de desespero.</p>
-<p>Mas ele sabia o nome que Margareth usava quando estava doente. Nunca saiu nos jornais.</p>
-<p>Não consigo parar de pensar nisso. Amanhã vou procurar o endereço, se ainda for possível decifrá-lo. Não prometi que iria. Não prometi nada.</p>
-<p>Se houver alguma chance de vê-las outra vez, não sei se tenho o direito de ignorá-la.</p>
-<p class="signature">E.</p>
-</section>
-<div class="fold"></div>
+<main class="outer" aria-label="Folha manuscrita antiga">
+ <section class="paper">
+  <span class="stain stain-a"></span><span class="stain stain-b"></span><span class="stain stain-c"></span>
+  <span class="tear tear-left"></span><span class="tear tear-bottom"></span>
+  <div class="ink">
+   <p>Não sei ao certo o que pensar daquele homem.</p>
+   <p>Há algo de estranho na maneira como Carlos fala comigo. Não é exatamente o que diz, mas a tranquilidade com que o diz — como se já soubesse o que vou perguntar antes mesmo que eu encontre coragem para fazê-lo.</p>
+   <p>Hoje voltou a mencionar aquelas duas pessoas. Cast. Margareth. Não pronunciou os nomes como quem oferece condolências, nem como quem deseja recordar os mortos. Falou deles como se ainda houvesse alguma coisa a dizer. Como se eu tivesse deixado uma conversa pela metade.</p>
+   <p>Quando perguntei o que queria de mim, não respondeu de imediato. Apenas me observou. Depois disse que poderia me mostrar algo.</p>
+   <p>Algo. É uma palavra conveniente. Pode significar qualquer coisa e, ainda assim, fazer parecer que significa muito.</p>
+   <p>Insisti para que explicasse. Ele desviou a pergunta, dizendo que certas coisas perdem o sentido quando são explicadas antes da hora. Não gostei da resposta. Tampouco consegui esquecê-la.</p>
+   <p>Tenho a impressão de que Carlos não pretende me contar tudo de uma vez. Parece escolher cuidadosamente o que deixa escapar, como se estivesse esperando que eu próprio peça para saber o restante. Talvez queira que eu o acompanhe a algum lugar. Talvez queira apenas descobrir até onde estou disposto a ir por uma promessa que nem sequer formulou por inteiro.</p>
+   <p>Não sei como chegou a saber tanto sobre minha família. Não me recordo de ter falado com ele antes, e certamente não lhe contei sobre certas coisas que pertenciam apenas a nós.</p>
+   <p class="pause">Por que me procurou justamente agora?</p>
+   <p>Há momentos em que penso que deveria simplesmente deixar isso para trás. Seria mais sensato. Mas, quando tento fazê-lo, volto àquela conversa, à sua expressão, à maneira como disse que ainda havia algo que eu poderia ver.</p>
+   <p>Não quero acreditar em qualquer coisa só porque desejo que seja verdade. Já me enganei o bastante. Ainda assim, não consigo afastar a possibilidade de que ele saiba algo que eu não sei.</p>
+   <p>Talvez eu deva ouvi-lo mais uma vez. Não prometi acompanhá-lo. Não prometi nada. Apenas preciso descobrir por que parece tão certo de que tem algo a me mostrar.</p>
+   <p class="pause">talvez ele possa me ajudar a revelá-las, a tê-las de volta.</p>
+   <p class="signature">E.</p>
+  </div>
+  <div class="fold"></div>
+ </section>
 </main>
 </body>
 </html>
