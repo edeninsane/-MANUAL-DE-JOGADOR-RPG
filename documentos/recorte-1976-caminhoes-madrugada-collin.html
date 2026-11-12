@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171411">
+<title>Recorte incompleto — 1976 | Os caminhões da madrugada</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#171411}
+body{padding:30px 12px 55px;font-family:'Libre Baskerville',Georgia,serif;color:#000}
+.back{display:block;max-width:900px;margin:0 auto 18px;color:#c2a77d;text-decoration:none;font:12px 'Special Elite',monospace;letter-spacing:.12em}
+.canvas{position:relative;max-width:900px;min-height:1050px;margin:auto;padding:25px 18px 60px;filter:drop-shadow(0 18px 28px #0009)}
+.scrap{position:relative;overflow:hidden;background:#d8c9a8;background-image:repeating-linear-gradient(0deg,#58452a08 0px,#58452a08 1px,transparent 1px,transparent 4px),linear-gradient(95deg,#6f57351a,transparent 11%,transparent 90%,#6f57351c);padding:22px 26px;margin:0 auto 18px;box-shadow:0 4px 14px #0005}
+.scrap:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 4% 22%,#5b201d80 0 1.5%,#5b201d2b 3%,transparent 8%),radial-gradient(ellipse at 94% 88%,#5a211f7a 0 2%,#5a211f22 4%,transparent 9%),radial-gradient(ellipse at 78% 4%,#654e302e 0 2%,transparent 8%);mix-blend-mode:multiply}
+.scrap:after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #6d573b55;clip-path:polygon(0 1%,7% 0,14% 1%,22% 0,31% 1%,40% 0,50% 1%,60% 0,69% 1%,78% 0,87% 1%,100% 0,99% 12%,100% 24%,99% 36%,100% 48%,99% 60%,100% 72%,99% 84%,100% 100%,90% 99%,80% 100%,70% 99%,60% 100%,50% 99%,40% 100%,30% 99%,20% 100%,10% 99%,0 100%,1% 88%,0 76%,1% 64%,0 52%,1% 40%,0 28%,1% 16%)}
+.mast{border-top:4px double #241c14;border-bottom:4px double #241c14;text-align:center;padding:8px 0 10px}
+.papername{font:clamp(2.2rem,7vw,4rem)/.95 'IM Fell English',Georgia,serif;letter-spacing:-.04em}
+.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:9px;font:10px 'Special Elite',monospace;letter-spacing:.08em}
+h1{font:clamp(1.8rem,5vw,3rem)/1.02 'IM Fell English',Georgia,serif;text-align:left;margin:8px 0}
+h2{font:21px 'IM Fell English',Georgia,serif;margin:14px 0 6px}
+p{font-size:12px;line-height:1.8;margin:7px 0;text-align:justify}
+.kicker{font:11px 'Special Elite',monospace;letter-spacing:.16em;text-transform:uppercase;margin-bottom:7px}
+.columns{columns:2;column-gap:24px}.columns p{break-inside:avoid}
+.small{font:10px 'Special Elite',monospace;letter-spacing:.06em}
+.fragment{width:95%;transform:rotate(-.6deg);margin-left:2%}
+.fragment.two{width:87%;margin-left:8%;transform:rotate(1deg)}
+.fragment.three{width:92%;margin-left:1%;transform:rotate(.4deg)}
+.fragment.four{width:79%;margin-left:16%;transform:rotate(-1.3deg)}
+.torn{clip-path:polygon(0 2%,7% 0,14% 2%,24% 0,33% 2%,42% 0,52% 2%,63% 0,72% 2%,82% 0,92% 2%,100% 0,99% 13%,100% 25%,98% 37%,100% 50%,99% 63%,100% 75%,98% 87%,100% 100%,91% 98%,82% 100%,72% 98%,61% 100%,51% 98%,40% 100%,29% 98%,19% 100%,8% 98%,0 100%,2% 86%,0 73%,2% 61%,0 49%,2% 37%,0 25%,2% 13%)}
+.rule{border:0;border-top:1px solid #65543c;margin:12px 0}
+.cross{text-decoration:line-through;text-decoration-color:#742c28;text-decoration-thickness:2px}
+.ink{color:#6f2926;font:italic 15px 'IM Fell English',serif;transform:rotate(-1deg);margin:12px 4px}
+.note{border-left:3px solid #6f2926;padding-left:10px;color:#6f2926;font:italic 14px/1.4 'IM Fell English',serif;margin:12px 0}
+.blackout{background:#211a16;color:#211a16;padding:0 15px}
+.stamp{display:inline-block;border:3px double #6f2926;color:#6f2926!important;padding:6px 9px;font:11px 'Special Elite',monospace;letter-spacing:.13em;transform:rotate(-7deg)}
+.photo{position:relative;max-width:460px;margin:13px auto 16px;padding:8px;background:#b3a78d;border:1px solid #625541;box-shadow:0 3px 8px #0005;transform:rotate(-1deg)}
+.photo svg{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.15)}
+.caption{font:10px 'Special Elite',monospace;text-align:center;margin-top:5px}
+.tearline{height:12px;margin:4px 0 18px;background:linear-gradient(175deg,transparent 40%,#171411 43%,#171411 48%,transparent 52%);opacity:.75}
+.footer{border-top:3px double #241c14;text-align:center;padding-top:9px;margin-top:14px;font:9px 'Special Elite',monospace;letter-spacing:.1em}
+html body,html body *{color:#000!important;-webkit-text-fill-color:#000!important}
+html body .ink,html body .note,html body .stamp{color:#6f2926!important;-webkit-text-fill-color:#6f2926!important}
+html body .blackout{color:#211a16!important;-webkit-text-fill-color:#211a16!important}
+@media(max-width:600px){body{padding:14px 5px 30px}.canvas{padding:10px 4px}.scrap{padding:18px 17px;margin-bottom:12px}.columns{columns:1}.fragment.two,.fragment.four{width:95%;margin-left:3%}.meta{justify-content:center}}
+@media print{body{background:white;padding:0}.back{display:none}.canvas{filter:none}.scrap{box-shadow:none}}
+</style>
+</head>
+<body>
+<a class="back" href="../documentos.html">← VOLTAR AO ARQUIVO DE DOCUMENTOS</a>
+<main class="canvas">
+<article class="scrap torn fragment">
+<header class="mast">
+<div class="papername">Diário da Capital</div>
+<div class="meta"><span>EDIÇÃO DE SEXTA-FEIRA</span><span>2 DE JULHO DE 1976</span><span>CR$ 3,00</span></div>
+</header>
+<div class="kicker">CIDADE · VIZINHANÇA · HOSPÍCIO COLLIN</div>
+<h1>Caminhões são vistos entrando no Hospício Collin durante a madrugada</h1>
+<p><i>Moradores relatam movimentação frequente pelo portão de serviço; direção afirma tratar-se de entregas e serviços de manutenção.</i></p>
+<hr class="rule">
+<div class="columns">
+<p>Moradores das imediações do Hospício Collin voltaram a procurar esta redação para relatar uma movimentação que, segundo eles, se repete há semanas: caminhões de carroceria fechada entram na propriedade durante a madrugada, quase sempre depois da meia-noite.</p>
+<p>Os veículos não utilizariam o acesso principal. De acordo com os relatos, contornam o muro lateral e aguardam a abertura de um portão próximo às dependências de serviço. Em algumas noites, os faróis seriam apagados antes mesmo de o caminhão atravessar completamente a entrada.</p>
+<p>Uma moradora, que pediu para não ser identificada, afirma ter observado funcionários aguardando os veículos. “O portão já estava sendo aberto quando o caminhão dobrou a estrada. Não parecia que tinham acabado de chegar por acaso”, relatou.</p>
+<p>Outro residente declarou ter visto volumes cobertos por lona sendo retirados da carroceria. Não foi possível determinar a natureza do material, tampouco confirmar se os objetos eram destinados ao hospital ou a algum setor de manutenção.</p>
+<p>Os caminhões permaneceriam no interior da propriedade por períodos variados. Um dos moradores afirma que, em pelo menos uma ocasião, o veículo entrou pouco depois das duas horas e deixou o local antes do amanhecer.</p>
+<p>Procurada, a administração do Hospício Collin informou que a instituição recebe regularmente materiais de uso interno e serviços contratados. A nota, entretanto, não especifica quais empresas realizam as entregas nem apresenta horários previstos para a circulação dos veículos.</p>
+</div>
+<div class="photo">
+<svg viewBox="0 0 520 245" role="img" aria-label="Fotografia antiga e granulada de um caminhão diante de um portão durante a noite">
+<defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .22"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter><linearGradient id="night" x2="0" y2="1"><stop stop-color="#777"/><stop offset="1" stop-color="#292929"/></linearGradient></defs>
+<rect width="520" height="245" fill="url(#night)"/>
+<path d="M0 173 L520 163 L520 245 L0 245Z" fill="#292929"/>
+<path d="M350 43 L510 43 L510 181 L350 181Z" fill="#484848"/>
+<path d="M364 55 L364 169 M390 55 L390 169 M416 55 L416 169 M442 55 L442 169 M468 55 L468 169 M494 55 L494 169" stroke="#171717" stroke-width="5"/>
+<path d="M22 164 L22 80 L42 62 L62 80 L62 164 M22 105 L62 105" fill="none" stroke="#202020" stroke-width="7"/>
+<path d="M72 172 L72 146 L112 132 L151 132 L173 151 L173 181 L72 181Z" fill="#353535"/>
+<path d="M86 145 L86 109 L286 109 L286 177 L170 177 L170 151 L151 132 L112 132Z" fill="#777"/>
+<path d="M286 132 L335 132 L365 156 L365 181 L286 181Z" fill="#555"/>
+<path d="M295 140 L332 140 L350 157 L295 157Z" fill="#969696"/>
+<circle cx="139" cy="185" r="24" fill="#171717"/><circle cx="139" cy="185" r="10" fill="#999"/>
+<circle cx="319" cy="185" r="24" fill="#171717"/><circle cx="319" cy="185" r="10" fill="#999"/>
+<path d="M72 171 L365 171" stroke="#bbb" stroke-width="3" opacity=".35"/>
+<path d="M0 205 L520 197" stroke="#aaa" stroke-width="2" opacity=".25"/>
+<rect width="520" height="245" filter="url(#grain)" opacity=".85"/>
+</svg>
+<div class="caption">IMAGEM REPRODUZIDA A PARTIR DE CÓPIA DANIFICADA · VEÍCULO NÃO IDENTIFICADO</div>
+</div>
+</article>
+
+<div class="tearline"></div>
+
+<article class="scrap torn fragment two">
+<div class="kicker">TRECHO PRESERVADO · RESPOSTA DAS AUTORIDADES</div>
+<h2>Delegacia recebeu reclamações</h2>
+<p>A delegacia responsável pela região confirmou o recebimento de manifestações de moradores sobre o trânsito de veículos pesados durante a noite. Em nota breve, informou que não há, até o momento, confirmação de transporte irregular ou registro que permita atribuir aos caminhões qualquer atividade criminosa.</p>
+<p>Questionada sobre a possibilidade de uma verificação no local, a autoridade consultada limitou-se a declarar que “a situação será observada conforme os procedimentos cabíveis”. Não foi informado se houve visita à propriedade.</p>
+<p>A reportagem tentou obter uma relação dos fornecedores do Hospício Collin. A secretaria afirmou que os nomes e contratos pertencem à administração interna e não seriam divulgados.</p>
+<p class="small">[A COLUNA SE INTERROMPE NESTE PONTO. O PAPEL FOI CORTADO NA ALTURA DA ÚLTIMA LINHA.]</p>
+<div class="note">“Se são entregas comuns, por que não usam o portão da frente?”</div>
+</article>
+
+<article class="scrap torn fragment three">
+<div class="kicker">NOTA LATERAL · RELATO DE UM MORADOR</div>
+<p>O caminhão da noite de terça-feira era mais comprido que os outros. Parou antes do portão. Um homem saiu da guarita e falou com o motorista. Não houve conferência de papéis que eu pudesse ver.</p>
+<p>Quando voltou para a estrada, o veículo estava sem a lona que cobria a carroceria. Não sei dizer se saiu vazio. Estava escuro demais para enxergar.</p>
+<p class="ink">O depoimento foi entregue por escrito. A assinatura aparece arrancada do original.</p>
+<hr class="rule">
+<p class="small">[TRECHO DANIFICADO] &nbsp; <span class="cross">“O motorista era conhecido dos funcionários”</span> &nbsp; [FIM DA LINHA]</p>
+<div class="stamp">FOTOGRAFIA NÃO CONCLUSIVA</div>
+</article>
+
+<article class="scrap torn fragment four">
+<div class="kicker">ANOTAÇÕES A LÁPIS NO VERSO DO RECORTE</div>
+<p class="ink">Não entram pela frente. Sempre pelo portão lateral.</p>
+<p class="ink">Anotar horários. Verificar se são os mesmos caminhões.</p>
+<p class="ink"><span class="cross">Perguntar diretamente a Collin.</span> Melhor não.</p>
+<p class="small">PLACA: <span class="blackout">M████—7█</span> &nbsp; HORÁRIO: 02H17? &nbsp; [ÚLTIMOS NÚMEROS ILEGÍVEIS]</p>
+<div class="footer">DIÁRIO DA CAPITAL · RECORTE SEM PÁGINA ORIGINAL<br>ARQUIVO DE IMPRENSA · JULHO DE 1976</div>
+</article>
+</main>
+</body>
+</html>
