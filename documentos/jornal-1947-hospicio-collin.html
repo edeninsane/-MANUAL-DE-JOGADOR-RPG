@@ -28,8 +28,9 @@ h2{font-size:clamp(34px,5.8vw,62px);line-height:.98;text-align:center;margin:0 a
 @media(max-width:650px){.columns{columns:1}.masthead h1{letter-spacing:-1px}.dek{font-size:17px}}
 @media print{body{background:white;padding:0}.sheet{box-shadow:none;border:0;max-width:none}.columns{columns:2}}
 
-/* Legibilidade: toda a escrita impressa e manuscrita em preto */
-.sheet, .sheet *{color:#000!important}
+
+/* CONTRASTE: força texto preto em todos os elementos, inclusive links e textos estilizados */
+html body, html body * { color: #000 !important; -webkit-text-fill-color: #000 !important; }
 </style>
 </head>
 <body>
