@@ -3,81 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fragmento de anotações de Edward Collin — 1948</title>
+<title>Folha manuscrita — 1948</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Special+Elite&display=swap');
-:root{--paper:#d9c9a7;--ink:#30271f;--fade:#75624d}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:28px 14px;background:#29251f;display:flex;justify-content:center;align-items:flex-start;color:var(--ink)}
-.paper{position:relative;width:min(790px,100%);min-height:900px;padding:54px clamp(25px,7vw,76px) 65px;background:linear-gradient(115deg,#e5d8ba 0%,#d9c9a7 48%,#d2c09b 100%);box-shadow:0 14px 55px #0009;border:1px solid #9d8969;overflow:hidden;transform:rotate(-.35deg)}
-.paper:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 31px,#806d5012 32px),radial-gradient(ellipse at 12% 8%,#fff4 0 3%,transparent 23%),radial-gradient(ellipse at 91% 89%,#7a573522 0 8%,transparent 28%);mix-blend-mode:multiply}
+body{margin:0;min-height:100vh;padding:25px 14px;background:#29251f;display:flex;justify-content:center;align-items:flex-start}
+.paper{position:relative;width:min(790px,100%);min-height:900px;padding:58px clamp(25px,7vw,76px) 70px;background:linear-gradient(115deg,#e5d8ba,#d9c9a7 48%,#d2c09b);box-shadow:0 14px 55px #0009;border:1px solid #9d8969;overflow:hidden;transform:rotate(-.3deg)}
+.paper:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 31px,#806d5012 32px),radial-gradient(ellipse at 12% 8%,#fff4 0 3%,transparent 23%),radial-gradient(ellipse at 91% 89%,#7a573522 0 8%,transparent 28%)}
 .paper:after{content:"";position:absolute;inset:12px;border:1px solid #7c694a30;pointer-events:none}
-.stain{position:absolute;pointer-events:none;border-radius:50%;filter:blur(1px);background:radial-gradient(ellipse,#6c4c2d55 0 12%,#8c6c4530 38%,transparent 72%)}
-.stain.one{width:190px;height:110px;top:34px;right:-45px;transform:rotate(-22deg)}
-.stain.two{width:130px;height:160px;bottom:62px;left:-60px;transform:rotate(30deg)}
-.stain.three{width:90px;height:65px;top:48%;right:8%;opacity:.45}
-.heading{position:relative;text-align:center;font:12px 'Special Elite',monospace;letter-spacing:2px;color:#67563f;text-transform:uppercase;margin-bottom:28px}
-.date{position:relative;text-align:right;font:22px 'Caveat',cursive;color:#62513e;margin-bottom:16px;transform:rotate(-1deg)}
-.hand{position:relative;font:clamp(23px,3.3vw,29px)/1.34 'Caveat','Segoe Print',cursive;letter-spacing:.15px;color:#29251f;text-shadow:0 0 .35px #29251f}
+.stain{position:absolute;pointer-events:none;border-radius:50%;background:radial-gradient(ellipse,#6c4c2d55 0 12%,#8c6c4530 38%,transparent 72%);filter:blur(1px)}
+.one{width:190px;height:110px;top:34px;right:-45px;transform:rotate(-22deg)}
+.two{width:130px;height:160px;bottom:62px;left:-60px;transform:rotate(30deg)}
+.hand{position:relative;font:clamp(23px,3.3vw,29px)/1.34 'Caveat','Segoe Print',cursive;letter-spacing:.15px;transform:rotate(-.25deg)}
 .hand p{margin:0 0 17px}
-.hand .indent{padding-left:24px}
-.cross{position:relative;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#47382c;opacity:.78}
-.redact{display:inline-block;position:relative;background:#332b23;color:transparent;border-radius:3px;padding:0 12px;transform:rotate(-1.8deg);height:.72em;vertical-align:baseline;box-shadow:1px 2px 2px #0003}
-.smudge{display:inline-block;color:transparent;position:relative;text-shadow:none}
-.smudge:after{content:"";position:absolute;left:-3px;right:-4px;top:35%;height:1em;background:radial-gradient(ellipse,#4c3b2d 0 35%,#6b5139 55%,transparent 78%);filter:blur(2px);transform:rotate(2deg)}
-.margin-note{position:relative;font:19px 'Caveat',cursive;color:#66533e;text-align:right;transform:rotate(-4deg);margin:12px 12px 20px}
-.final{margin-top:28px!important;font-size:clamp(25px,3.7vw,32px);font-weight:600}
-.signature{position:relative;text-align:right;font:26px 'Caveat',cursive;margin-top:28px;color:#403326;transform:rotate(-3deg)}
-.fold{position:absolute;left:0;right:0;top:62%;height:2px;background:linear-gradient(90deg,transparent,#8c78554a 20%,#fff3 50%,#8c785544 80%,transparent);box-shadow:0 2px 5px #59452a18}
-.footer{position:relative;margin-top:40px;text-align:center;font:10px 'Special Elite',monospace;letter-spacing:1.5px;color:#806d50}
+.indent{padding-left:24px}
+.cross{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#47382c;opacity:.8}
+.blotted{display:inline-block;background:#332b23;color:transparent!important;padding:0 12px;height:.72em;vertical-align:baseline;border-radius:2px;transform:rotate(-1deg)}
+.margin{position:relative;font:20px 'Caveat',cursive;text-align:right;transform:rotate(-4deg);margin:10px 12px 18px}
+.signature{position:relative;text-align:right;font:28px 'Caveat',cursive;margin-top:28px;transform:rotate(-3deg)}
+.fold{position:absolute;left:0;right:0;top:62%;height:2px;background:linear-gradient(90deg,transparent,#8c78554a 20%,#fff3 50%,#8c785544 80%,transparent)}
+/* CONTRASTE */
+html body,html body *{color:#000!important;-webkit-text-fill-color:#000!important}
+html body .blotted{color:transparent!important;-webkit-text-fill-color:transparent!important}
 @media print{body{background:white;padding:0}.paper{box-shadow:none;transform:none;width:100%;min-height:100vh}}
-
-
-/* CONTRASTE: força texto preto em todos os elementos, inclusive links e textos estilizados */
-html body, html body * { color: #000 !important; -webkit-text-fill-color: #000 !important; }
 </style>
 </head>
 <body>
 <main class="paper">
-  <span class="stain one"></span><span class="stain two"></span><span class="stain three"></span>
-  <div class="heading">Folha solta · Caderno particular</div>
-  <div class="date">23 de outubro de 1948 — tarde da noite?</div>
-  <section class="hand">
-    <p>Não pretendia sair esta noite. A casa estava silenciosa demais e, por algum motivo, não consegui permanecer nela. Fui ao mesmo estabelecimento de algumas semanas atrás. O dono já parece conhecer meu pedido antes mesmo que eu me sente.</p>
-
-    <p>Bebi mais do que deveria. Não me orgulho disso. É apenas mais fácil suportar certas horas quando os pensamentos deixam de falar todos ao mesmo tempo.</p>
-
-    <p>Foi quando aquele homem se aproximou.</p>
-
-    <p>Disse chamar-se Carlos. Não me recordo de tê-lo visto antes, embora tenha falado comigo como se já nos conhecêssemos. Não era particularmente distinto na aparência. Ainda assim, havia nele qualquer coisa difícil de explicar — uma tranquilidade inconveniente, quase como se não estivesse naquele lugar pelo mesmo motivo que os demais.</p>
-
-    <p>Começou falando sobre o Hospício. Não sobre os pacientes, tampouco sobre os funcionários. Falou de mim. Da minha família. De coisas que não me lembro de ter contado a ninguém naquele lugar.</p>
-
-    <p class="indent">Perguntei quem lhe havia dado essas informações. Ele apenas sorriu e respondeu que algumas coisas são fáceis de encontrar quando se sabe onde procurar.</p>
-
-    <p>Deveria ter ido embora naquele instante.</p>
-
-    <p>Mas então mencionou <span class="cross">o acidente</span> <span class="redact">██████</span> e, depois, falou de Margareth. Não com condolências. Não como alguém que tivesse lido uma notícia antiga. Falou como se soubesse de algo que não deveria saber.</p>
-
-    <p>Quando perguntei o que queria de mim, respondeu que não queria coisa alguma. Disse apenas que possuía algo para me mostrar. Algo que, segundo ele, eu procurava havia muito tempo — embora eu nunca tenha dito estar procurando nada.</p>
-
-    <p class="margin-note">“Você ainda deseja encontrá-las, não deseja?” — foi o que disse. Ou talvez eu tenha entendido errado.</p>
-
-    <p>Não sei se foi o álcool, o cansaço ou a maneira como pronunciou aquelas palavras, mas por um instante tive a impressão de que o bar inteiro havia ficado distante. Perguntei o que exatamente ele pretendia mostrar. Carlos respondeu que não seria apropriado conversar ali.</p>
-
-    <p>Deixou um endereço. Ou algo parecido com um endereço. A tinta borrou quando tentei copiá-lo. <span class="smudge">Há uma palavra escrita aqui</span> e não consigo mais distinguir se era o nome de uma rua ou de um lugar.</p>
-
-    <p>Também escreveu três símbolos no verso do recibo. Não reconheci nenhum deles. Um parecia uma letra incompleta; os outros dois, marcas feitas por uma mão pouco familiarizada com a escrita.</p>
-
-    <p>Talvez eu devesse procurar a polícia. Talvez devesse esquecer o assunto. Não sei por que estou registrando isto, exceto pelo receio de que amanhã eu tente convencer a mim mesmo de que foi apenas uma conversa sem importância.</p>
-
-    <p>Se Carlos estiver mentindo, quero descobrir por quê. Se estiver dizendo a verdade, então preciso, ao menos, ouvi-lo.</p>
-
-    <p class="final">talvez, ele consiga me ajudar e vê-las novamente.</p>
-  </section>
-  <div class="signature">E. Collin</div>
-  <div class="fold"></div>
-  <div class="footer">Não arquivar · Não entregar à secretaria</div>
+<span class="stain one"></span><span class="stain two"></span>
+<section class="hand">
+<p>Não devia ter voltado àquele lugar.</p>
+<p>Disse a mim mesmo que seria apenas uma bebida, uma hora fora de casa, talvez duas. O bastante para não ouvir o silêncio. O bastante para não olhar para os quartos vazios.</p>
+<p>O homem estava lá outra vez. Carlos. Não sei se já o tinha visto antes ou se apenas reconheci a maneira como me observava. Falou comigo sem pedir licença, como se nossa conversa tivesse sido interrompida na noite anterior.</p>
+<p>Não perguntou como eu estava. Perguntou se eu ainda pensava nelas.</p>
+<p>Respondi que não sabia do que estava falando. Ele não insistiu. Apenas mencionou Cast e, depois, Margareth. Não ofereceu condolências. Não demonstrou surpresa ao perceber que eu queria encerrar o assunto.</p>
+<p class="indent">Como pode saber dessas coisas?</p>
+<p>Disse que conhecia um meio de me mostrar algo. Não explicou o que era. Quando perguntei se estava falando de uma fotografia, de cartas ou de alguma lembrança, respondeu que eu estava pensando pequeno demais.</p>
+<p>Deveria ter ido embora. Escrevo isso agora porque não fui.</p>
+<p>Ele disse que não estava me pedindo fé. Queria apenas que eu o acompanhasse até um lugar, em outra ocasião. Falou que eu poderia decidir depois de ver. Não gostei da segurança com que disse isso.</p>
+<p>O endereço ficou no recibo. A chuva — ou minha mão — estragou quase tudo. Ainda consigo ler <span class="cross">Rua</span> <span class="blotted">██████</span> e talvez o número seja 17. Talvez não.</p>
+<p class="margin">Três marcas no verso. Não parecem letras. Não mostrar a ninguém.</p>
+<p>Também não devo contar a Martin. Não há razão para envolver o menino em mais uma das minhas decisões.</p>
+<p>Talvez Carlos seja um vigarista. Talvez tenha conhecido alguém da família. Talvez tenha lido os jornais e esteja se aproveitando de um homem que já não sabe distinguir esperança de desespero.</p>
+<p>Mas ele sabia o nome que Margareth usava quando estava doente. Nunca saiu nos jornais.</p>
+<p>Não consigo parar de pensar nisso. Amanhã vou procurar o endereço, se ainda for possível decifrá-lo. Não prometi que iria. Não prometi nada.</p>
+<p>Se houver alguma chance de vê-las outra vez, não sei se tenho o direito de ignorá-la.</p>
+<p class="signature">E.</p>
+</section>
+<div class="fold"></div>
 </main>
 </body>
 </html>
